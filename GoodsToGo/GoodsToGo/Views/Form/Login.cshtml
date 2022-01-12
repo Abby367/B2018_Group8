@@ -1,0 +1,41 @@
+﻿@model GoodsToGo.Models.user
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/_LayoutPage2.cshtml";
+}
+<link rel="stylesheet" type="text/css" href="fcss/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="fcss/fontawesome-all.min.css">
+<link rel="stylesheet" type="text/css" href="fcss/iofrm-style.css">
+<link rel="stylesheet" type="text/css" href="fcss/iofrm-theme12.css">
+<div class="form-body">
+    <div class="row">
+        <div class="form-holder">
+            <div class="form-content">
+                <div class="form-items">
+                    <div class="website-logo-inside">
+                        <a href="index.html">
+                            <div class="logo">
+                                <img class="logo-size" src="fimages/logo-light.svg" alt="">
+                            </div>
+                        </a>
+                    </div>
+                    <h3>Get more things done with Loggin platform.</h3>
+                    <p>Access to the most powerfull tool in the entire design and web industry.</p>
+                    <div class="page-links">
+                        <a href=@Url.Action("Login", "Form") class="active">Login</a><a href=@Url.Action("Register", "Form")>Register</a>
+                    </div>
+                    <form>
+                        @Html.EditorFor(model => model.User_Name, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control" } })
+                        <div class="form-button">
+                            <button id="submit" type="submit" class="ibtn">Login</button> <a href=@Url.Action( "Forgot", "Form")>Forget password?</a>
+                        </div>
+                    </form>
+                    <div class="other-links">
+                        <span>Or login with</span><a href="#">Facebook</a><a href="#">Google</a><a href="#">Linkedin</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
