@@ -1,0 +1,146 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+
+    <link href="~/fcss/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/fcss/fontawesome-all.min.css" rel="stylesheet" />
+    <link href="~/fcss/iofrm-style.css" rel="stylesheet" />
+    <link href="~/fcss/iofrm-theme12.css" rel="stylesheet" />
+    <a href="~/ffonts/fa-brands-400.eot"></a>
+    <a href="~/ffonts/fa-brands-400.ttf"</a>
+    <a href="~/ffonts/fa-brands-400.woff"></a>
+    <a href="~/ffonts/fa-brands-400.woff2"></a>
+    <a href="~/ffonts/fa-regular-400.eot"</a>
+    <a href="~/ffonts/fa-regular-400.ttf"></a>
+    <a href="~/ffonts/fa-regular-400.woff"></a>
+    <a href="~/ffonts/fa-regular-400.woff2"></a>
+    <a href="~/ffonts/fa-solid-900.eot"></a>
+    <a href="~/ffonts/fa-solid-900.ttf"></a>
+    <a href="~/ffonts/fa-solid-900.woff"></a>
+    <a href="~/ffonts/fa-solid-900.woff2"></a>
+    <script src="~/fjs/main.js"></script>
+    <script src="~/fjs/jquery.min.js"></script>
+    <script src="~/fjs/cleave.min.js"></script>
+    <script src="~/fjs/bootstrap.min.js"></script>
+    <script src="~/fjs/popper.min.js"></script>
+    <link href="~/css/fonts.css" rel="stylesheet" />
+    <link href="~/css/animate.css" rel="stylesheet" />
+    <link href="~/css/bootstrap.css" rel="stylesheet" />
+    <link href="~/css/style-magnific-popup.css" rel="stylesheet" />
+    <link href="~/css/style.css" rel="stylesheet" />
+    <a href="~/fonts/icons-font.eot"></a>
+    <a href="~/fonts/icons-font.ttf"></a>
+    <a href="~/fonts/icons-font.woff"></a>
+    <script src="~/js/bootstrap.min.js"></script>
+    <script src="~/js/custom.js"></script>
+    <script src="~/js/html5shiv.js"></script>
+    <script src="~/js/icon-font-ie7.js"></script>
+    <script src="~/js/jquery-1.11.3.min.js"></script>
+    <script src="~/js/jquery.magnific-popup.min.js"></script>
+    <script src="~/js/jquery.nav.js"></script>
+    <script src="~/js/plugins.js"></script>
+    <script src="~/js/respond.min.js"></script>
+    <script src="~/js/SmoothScroll.js"></script>
+    <script src="~/js/wow.js"></script>
+
+</head>
+<body>
+    <!--begin nav -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+
+        <!--begin container -->
+        <div class="container">
+
+            <!--begin navbar -->
+            <div class="navbar-header">
+                <button data-target="#navbar-collapse-02" data-toggle="collapse" class="navbar-toggle" type="button">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+
+                <a href=@Url.Action("Index", "Home") class="navbar-brand brand scrool"><span class="blue">Goods </span>To Go</a>
+            </div>
+
+
+            <!--end navbar -->
+
+        </div>
+        <!--end container -->
+
+    </nav>
+    <!--end nav -->
+    <div>
+        @RenderBody()
+    </div>
+    <!--begin footer -->
+    <div class="footer">
+
+        <!--begin container -->
+        <div class="container">
+
+            <!--begin row -->
+            <div class="row">
+
+                <!--begin col-md-12 -->
+                <div class="col-md-12 text-center">
+
+                    <!--begin copyright -->
+                    <div class="copyright">
+                        <p class="footer-logo"><span class="blue">Bé</span>Smart</p>
+                        <p>Copyright © 2016. Designed &amp; Developed by <a href="http://themeforest.net/user/bogdan_09/portfolio?ref=bogdan_09" target="_blank">Bogdan Preda</a></p>
+
+                    </div>
+                    <!--end copyright -->
+                    <!--begin footer_social -->
+                    <ul class="footer_social">
+                        <li>
+                            <a href="#">
+                                <i class="icon icon-twitter"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="icon icon-pinterest"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="icon icon-facebook"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="icon icon-instagram"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="icon icon-skype"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="icon icon-dribble"></i>
+                            </a>
+                        </li>
+                    </ul>
+                    <!--end footer_social -->
+
+                </div>
+                <!--end col-md-6 -->
+
+            </div>
+            <!--end row -->
+
+        </div>
+        <!--end container -->
+
+    </div>
+    <!--end footer -->
+</body>
+</html>
