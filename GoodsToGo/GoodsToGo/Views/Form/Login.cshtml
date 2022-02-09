@@ -19,21 +19,24 @@
                             </div>
                         </a>
                     </div>
-                    <h3>Get more things done with Loggin platform.</h3>
-                    <p>Access to the most powerfull tool in the entire design and web industry.</p>
+                    <h3>Taguig Public Goods Distribution</h3>
+                    <p>Goods To Go</p>
+                    @ViewBag.un
                     <div class="page-links">
-                        <a href=@Url.Action("Login", "Form") class="active">Login</a><a href=@Url.Action("Register", "Form")>Register</a>
+                        <a href=@Url.Action("Login", "Form") class="active">Login</a><a href=@Url.Action("Register", "Sign")>Register</a>
                     </div>
-                    <form>
-                        @Html.EditorFor(model => model.User_Name, new { htmlAttributes = new { @class = "form-control" } })
-                        @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control" } })
+                    <form action="#" method="post">
+                        @Html.ValidationMessageFor(model => model.User_Email, "", new { @class = "text-danger" })
+                        @Html.EditorFor(model => model.User_Email, new { htmlAttributes = new { @class = "form-control", placeholder = "Email Address" } })
+                        @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                        @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control", placeholder = "Password" } })
+
                         <div class="form-button">
-                            <button id="submit" type="submit" class="ibtn">Login</button> <a href=@Url.Action( "Forgot", "Form")>Forget password?</a>
+                            <button id="submit" type="submit" value="Login" class="ibtn">Login</button>
                         </div>
+                        <h6><a href="#">Forgot Password?</a></h6>
                     </form>
-                    <div class="other-links">
-                        <span>Or login with</span><a href="#">Facebook</a><a href="#">Google</a><a href="#">Linkedin</a>
-                    </div>
+
                 </div>
             </div>
         </div>

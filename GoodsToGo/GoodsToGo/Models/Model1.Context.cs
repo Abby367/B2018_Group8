@@ -13,10 +13,10 @@ namespace GoodsToGo.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class Database5Entities : DbContext
+    public partial class Database1 : DbContext
     {
-        public Database5Entities()
-            : base("name=Database5Entities")
+        public Database1()
+            : base("name=Database1")
         {
         }
     
@@ -26,5 +26,9 @@ namespace GoodsToGo.Models
         }
     
         public virtual DbSet<User> Users { get; set; }
+        public virtual DbSet<Barangay> Barangays { get; set; }
+        public virtual DbSet<Book> Books { get; set; }
+        public virtual DbSet<Gender> Genders { get; set; }
+        public virtual DbSet<Profile> Profiles { get; set; }
     }
 }

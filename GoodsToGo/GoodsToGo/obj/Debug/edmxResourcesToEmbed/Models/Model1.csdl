@@ -1,16 +1,62 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema Namespace="Database5Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+<Schema Namespace="Database" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
   <EntityType Name="User">
     <Key>
       <PropertyRef Name="Id" />
     </Key>
-    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="User_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="User_Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="Re_Password" Type="Binary" MaxLength="50" FixedLength="false" />
+    <Property Name="Re_Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
   </EntityType>
-  <EntityContainer Name="Database5Entities" annotation:LazyLoadingEnabled="true">
+  <EntityContainer Name="Database1" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Users" EntityType="Self.User" />
+    <EntitySet Name="Barangays" EntityType="Database.Barangay" />
+    <EntitySet Name="Books" EntityType="Database.Book" />
+    <EntitySet Name="Genders" EntityType="Database.Gender" />
+    <EntitySet Name="Profiles" EntityType="Database.Profile" />
   </EntityContainer>
+  <EntityType Name="Barangay">
+    <Key>
+      <PropertyRef Name="BarangayID" />
+    </Key>
+    <Property Name="BarangayID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Barangay_Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Book">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Email" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Date" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Time" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Gender">
+    <Key>
+      <PropertyRef Name="GenderID" />
+    </Key>
+    <Property Name="GenderID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="GenderName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Profile">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="BarangayID" Type="Int32" />
+    <Property Name="House_No" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Street" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Purok_No" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="First_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Middle_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Last_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Suffix" Type="Int32" />
+    <Property Name="Gender" Type="Int32" />
+    <Property Name="Phone_No" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Birthdate" Type="DateTime" Precision="0" />
+  </EntityType>
 </Schema>

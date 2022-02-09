@@ -694,16 +694,16 @@ p.footer-logo{
 /* 			                 03. HOME                         */
 /* ========================================================== */
 
-.home-wrapper{
-	width:100%;
-	position:relative;
-	overflow:hidden;
-	z-index:100;
-	padding:200px 0 165px 0;
-	background: url(http://placehold.it/1920x1280);
-	background-position: center top;
+.home-wrapper {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    z-index: 100;
+    padding: 200px 0 165px 0;
+    background: url('../images/header.jpg');
+    background-position: center top;
     background-repeat: no-repeat;
-	background-attachment: scroll;
+    background-attachment: scroll;
     background-size: cover;
 }
 
@@ -808,16 +808,16 @@ p.home-subtitle{
 /* ========================================================== */
 /* 						   05. NEWSLETTER                     */
 /* ========================================================== */
-.newsletter-wrapper{
-	width:100%;
-	position:relative;
-	background: url(http://placehold.it/1920x1280);
-	background-position: center center;
+.newsletter-wrapper {
+    width: 100%;
+    position: relative;
+    background: url('../images/header.jpg');
+    background-position: center center;
     background-repeat: no-repeat;
-	background-attachment: fixed;
+    background-attachment: fixed;
     background-size: cover;
-	margin: 0 auto;
-	padding:110px 0 110px 0;
+    margin: 0 auto;
+    padding: 110px 0 110px 0;
 }
 
 .newsletter-wrapper .image-overlay{
@@ -1700,7 +1700,7 @@ p.contact_success_box{
 	width:100%;
 	position:relative;
 	overflow:hidden;
-	background: url(http://placehold.it/1920x1280);
+	background: url(../images/header.jpg);
 	background-position: center center;
     background-repeat: no-repeat;
 	background-attachment: fixed;
@@ -1816,7 +1816,7 @@ p.testimonials-text {
 	width:100%;
 	position:relative;
 	z-index:100;
-	background: url(http://placehold.it/1920x1280);
+	background: url(../images/header.jpg);
 	background-position: center top;
     background-repeat: no-repeat;
 	background-attachment: fixed;

@@ -1,16 +1,62 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema Namespace="Database5Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+<Schema Namespace="Database.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Barangay">
+    <Key>
+      <PropertyRef Name="BarangayID" />
+    </Key>
+    <Property Name="BarangayID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Barangay_Name" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="Book">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Email" Type="varchar(max)" />
+    <Property Name="Date" Type="varchar" MaxLength="50" />
+    <Property Name="Time" Type="varchar" MaxLength="50" />
+    <Property Name="Name" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="Gender">
+    <Key>
+      <PropertyRef Name="GenderID" />
+    </Key>
+    <Property Name="GenderID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="GenderName" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Profile">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="BarangayID" Type="int" />
+    <Property Name="House_No" Type="varchar" MaxLength="50" />
+    <Property Name="Street" Type="varchar" MaxLength="50" />
+    <Property Name="Purok_No" Type="varchar" MaxLength="50" />
+    <Property Name="First_Name" Type="varchar" MaxLength="50" />
+    <Property Name="Middle_Name" Type="varchar" MaxLength="50" />
+    <Property Name="Last_Name" Type="varchar" MaxLength="50" />
+    <Property Name="Suffix" Type="int" />
+    <Property Name="Gender" Type="int" />
+    <Property Name="Phone_No" Type="varchar" MaxLength="50" />
+    <Property Name="Email" Type="varchar" MaxLength="50" />
+    <Property Name="Birthdate" Type="date" />
+  </EntityType>
   <EntityType Name="User">
     <Key>
       <PropertyRef Name="Id" />
     </Key>
-    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="User_Name" Type="varchar" MaxLength="50" />
     <Property Name="User_Email" Type="varchar" MaxLength="50" />
     <Property Name="Password" Type="varchar" MaxLength="50" />
-    <Property Name="Re_Password" Type="varbinary" MaxLength="50" />
+    <Property Name="Re_Password" Type="varchar" MaxLength="50" />
   </EntityType>
-  <EntityContainer Name="Database5ModelStoreContainer">
+  <EntityContainer Name="DatabaseStoreContainer">
+    <EntitySet Name="Barangay" EntityType="Self.Barangay" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Book" EntityType="Self.Book" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Gender" EntityType="Self.Gender" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Profile" EntityType="Self.Profile" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
   </EntityContainer>
 </Schema>

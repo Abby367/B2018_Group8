@@ -12,12 +12,12 @@ namespace GoodsToGo.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class User
+    public partial class Book
     {
         public int Id { get; set; }
-        public string User_Name { get; set; }
-        public string User_Email { get; set; }
-        public string Password { get; set; }
-        public string Re_Password { get; set; }
+        public string Email { get; set; }
+        public string Date { get; set; }
+        public string Time { get; set; }
+        public string Name { get; set; }
     }
 }

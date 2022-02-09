@@ -1,14 +1,60 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="Database5ModelStoreContainer" CdmEntityContainer="Database5Entities">
+  <EntityContainerMapping StorageEntityContainer="DatabaseStoreContainer" CdmEntityContainer="Database1">
     <EntitySetMapping Name="Users">
-      <EntityTypeMapping TypeName="Database5Model.User">
+      <EntityTypeMapping TypeName="Database.User">
         <MappingFragment StoreEntitySet="User">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="User_Name" ColumnName="User_Name" />
           <ScalarProperty Name="User_Email" ColumnName="User_Email" />
           <ScalarProperty Name="Password" ColumnName="Password" />
           <ScalarProperty Name="Re_Password" ColumnName="Re_Password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Barangays">
+      <EntityTypeMapping TypeName="Database.Barangay">
+        <MappingFragment StoreEntitySet="Barangay">
+          <ScalarProperty Name="Barangay_Name" ColumnName="Barangay_Name" />
+          <ScalarProperty Name="BarangayID" ColumnName="BarangayID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Books">
+      <EntityTypeMapping TypeName="Database.Book">
+        <MappingFragment StoreEntitySet="Book">
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Time" ColumnName="Time" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Genders">
+      <EntityTypeMapping TypeName="Database.Gender">
+        <MappingFragment StoreEntitySet="Gender">
+          <ScalarProperty Name="GenderName" ColumnName="GenderName" />
+          <ScalarProperty Name="GenderID" ColumnName="GenderID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Profiles">
+      <EntityTypeMapping TypeName="Database.Profile">
+        <MappingFragment StoreEntitySet="Profile">
+          <ScalarProperty Name="Birthdate" ColumnName="Birthdate" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Phone_No" ColumnName="Phone_No" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="Suffix" ColumnName="Suffix" />
+          <ScalarProperty Name="Last_Name" ColumnName="Last_Name" />
+          <ScalarProperty Name="Middle_Name" ColumnName="Middle_Name" />
+          <ScalarProperty Name="First_Name" ColumnName="First_Name" />
+          <ScalarProperty Name="Purok_No" ColumnName="Purok_No" />
+          <ScalarProperty Name="Street" ColumnName="Street" />
+          <ScalarProperty Name="House_No" ColumnName="House_No" />
+          <ScalarProperty Name="BarangayID" ColumnName="BarangayID" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
