@@ -25,10 +25,10 @@ namespace GoodsToGo.Models
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<User> Users { get; set; }
         public virtual DbSet<Barangay> Barangays { get; set; }
-        public virtual DbSet<Book> Books { get; set; }
         public virtual DbSet<Gender> Genders { get; set; }
-        public virtual DbSet<Profile> Profiles { get; set; }
+        public virtual DbSet<ResetPassword> ResetPasswords { get; set; }
+        public virtual DbSet<Book> Books { get; set; }
+        public virtual DbSet<User> Users { get; set; }
     }
 }

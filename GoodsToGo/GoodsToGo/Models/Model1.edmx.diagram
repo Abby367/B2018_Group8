@@ -4,12 +4,12 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="b6d982433a37415194137eb7f21903fc" Name="Diagram1" ZoomLevel="98">
-        <EntityTypeShape EntityType="Database.User" Width="1.5" PointX="0.5" PointY="0.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="Database.Barangay" Width="1.5" PointX="7" PointY="0.5" />
-        <EntityTypeShape EntityType="Database.Book" Width="1.5" PointX="2.25" PointY="0.75" />
-        <EntityTypeShape EntityType="Database.Gender" Width="1.5" PointX="3.875" PointY="1" />
-        <EntityTypeShape EntityType="Database.Profile" Width="1.5" PointX="8.75" PointY="0.5" />
+      <Diagram DiagramId="b6d982433a37415194137eb7f21903fc" Name="Diagram1" ZoomLevel="45">
+        <EntityTypeShape EntityType="Database.Barangay" Width="1.5" PointX="8.625" PointY="2" />
+        <EntityTypeShape EntityType="Database.Gender" Width="1.5" PointX="6.125" PointY="6.125" />
+        <EntityTypeShape EntityType="Database.ResetPassword" Width="1.5" PointX="0.75" PointY="5.75" />
+        <EntityTypeShape EntityType="Database.Book" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="Database.User" Width="1.5" PointX="2.75" PointY="0.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

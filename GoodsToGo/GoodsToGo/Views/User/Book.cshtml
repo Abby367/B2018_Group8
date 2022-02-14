@@ -4,7 +4,7 @@
     Layout = "~/Views/_LayoutPage3.cshtml";
 }
 
-<!-- loader-->
+ <!-- loader-->
 <link href="assets/css/pace.min.css" rel="stylesheet" />
 <script src="assets/js/pace.min.js"></script>
 
@@ -148,12 +148,7 @@
                             </ol>
                         </nav>
                     </div>
-                    <div class="ms-auto">
-                        <div class="btn-group">
-                            <button type="button" class="btn btn-outline-primary">Logout</button>
-
-                        </div>
-                    </div>
+                   
                 </div>
                 <div class="row">
                     <div class="col-xl-8 mx-auto">
@@ -161,29 +156,22 @@
                         <div class="card">
                             <div class="card-body">
                                 <div class="border p-3 rounded">
-                                    <h6 class="mb-0 text-uppercase">Available date</h6>
+                                    <h6 class="mb-0 text-uppercase">Appointment</h6>
                                     <hr>
                                     <form action="#" method="post" class="row g-3">
-                                        <div class="col-12">
-                                            <label class="form-label">Name<span class="text-danger">*</span></label>
-                                            @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
-
-                                        </div>
-                                        <div class="col-12">
-                                            <label class="form-label">Email<span class="text-danger">*</span></label>
-                                            @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
-
-                                        </div>
+                                    
                                         <div class="col-12">
 
                                             <div class="mb-3">
+                                                @Html.ValidationMessageFor(model => model.Date, "", new { @class = "text-danger" })
                                                 <label class="form-label">Select Date<span class="text-danger">*</span></label>
-                                                @Html.EditorFor(model => model.Date, new { htmlAttributes = new { @class = "form-control datepicker" } })
+                                                @Html.EditorFor(model => model.Date, new { htmlAttributes = new { @class = "form-control datepicker", @type = "date" } })
                                             </div>
                                         </div>
                                         <div class="col-12">
 
                                             <div class="mb-3">
+                                                @Html.ValidationMessageFor(model => model.Time, "", new { @class = "text-danger" })
                                                 <label class="form-label">Select Time<span class="text-danger">*</span></label>
 
                                                 @Html.EditorFor(model => model.Time, new { htmlAttributes = new { @class = "form-control timepicker" } })
@@ -230,5 +218,10 @@
 <script src="~/assets/plugins/datetimepicker/js/picker.time.js"></script>
 <script src="~/assets/plugins/datetimepicker/js/picker.date.js"></script>
 <script src="~/assets/plugins/bootstrap-material-datetimepicker/js/moment.min.js"></script>
-<script src="~/assets/pl
+<script src="~/assets/plugins/bootstrap-material-datetimepicker/js/bootstrap-material-datetimepicker.min.js"></script>
+<script src="~/assets/js/form-date-time-pickes.js"></script>
+
+<!-- Main JS-->
+<script src="~/assets/js/main.js"></script>
+
 

@@ -1,4 +1,5 @@
-﻿@model IEnumerable<GoodsToGo.Models.Book>
+﻿@model GoodsToGo.Models.Book
+   
     @{
         ViewBag.Title = "History";
         Layout = "~/Views/_LayoutPage3.cshtml";
@@ -145,11 +146,7 @@
                             </ol>
                         </nav>
                     </div>
-                    <div class="ms-auto">
-                        <div class="btn-group">
-                            <button type="button" class="btn btn-outline-primary">Logout</button>
-
-                        </div>
+                   
                     </div>
                 </div>
                 <!--end breadcrumb-->
@@ -168,35 +165,20 @@
                             </tr>
                         </thead>
                         <tbody>
+                            
 
-                            @if (Model != null)
-                            {
-
-                                foreach (var item in Model.Reverse().Take(1))
-                                {
                                     <tr>
-                                        <td>@Html.DisplayFor(modelItem => item.Id)</td>
+                                        <td>@Html.DisplayFor(model => model.Id)</td>
+                                        <td>@Html.DisplayFor(model => model.Name)</td>
+                                        <td>@Html.DisplayFor(model => model.Email)</td>
+                                        <td>@Html.DisplayFor(model => model.Date)</td>
+                                        <td>@Html.DisplayFor(model => model.Time)</td>
 
-                                        <td>
-                                            @Html.DisplayFor(modelItem => item.Name)
-                                        </td>
-
-                                        <td>@Html.DisplayFor(modelItem => item.Email)</td>
-                                        <td>@Html.DisplayFor(modelItem => item.Date)</td>
-                                        <td>@Html.DisplayFor(modelItem => item.Time)</td>
-
-                                        <td>@ViewBag.i</td>
-                                        <td>
-                                            <div class="table-actions d-flex align-items-center gap-3 fs-6">
-                                                <a href="javascript:;" class="text-primary" data-bs-toggle="tooltip" data-bs-placement="bottom" title="" data-bs-original-title="Views" aria-label="Views"><i class="bi bi-eye-fill"></i></a>
-                                                <a href="javascript:;" class="text-warning" data-bs-toggle="tooltip" data-bs-placement="bottom" title="" data-bs-original-title="Edit" aria-label="Edit"><i class="bi bi-pencil-fill"></i></a>
-                                                <a href="javascript:;" class="text-danger" data-bs-toggle="tooltip" data-bs-placement="bottom" title="" data-bs-original-title="Delete" aria-label="Delete"><i class="bi bi-trash-fill"></i></a>
-                                            </div>
-                                        </td>
+                                       
 
                                     </tr>
-                                }
-                            }
+                                    
+                              
 
 
                         </tbody>

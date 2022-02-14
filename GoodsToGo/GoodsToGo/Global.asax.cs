@@ -13,6 +13,7 @@ namespace GoodsToGo
         {
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
+           
         }
     }
 }

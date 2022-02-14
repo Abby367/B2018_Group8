@@ -12,10 +12,10 @@
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Email" Type="varchar(max)" />
+    <Property Name="Email" Type="varchar" MaxLength="50" />
+    <Property Name="Name" Type="varchar" MaxLength="50" />
     <Property Name="Date" Type="varchar" MaxLength="50" />
     <Property Name="Time" Type="varchar" MaxLength="50" />
-    <Property Name="Name" Type="varchar(max)" />
   </EntityType>
   <EntityType Name="Gender">
     <Key>
@@ -24,11 +24,22 @@
     <Property Name="GenderID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="GenderName" Type="varchar" MaxLength="50" />
   </EntityType>
-  <EntityType Name="Profile">
+  <EntityType Name="ResetPassword">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="NewPassword" Type="varchar" MaxLength="50" />
+    <Property Name="ConfirmPassword" Type="varchar" MaxLength="50" />
+    <Property Name="ResetCode" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="User">
     <Key>
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Password" Type="varchar" MaxLength="50" />
+    <Property Name="Re_Password" Type="varchar" MaxLength="50" />
     <Property Name="BarangayID" Type="int" />
     <Property Name="House_No" Type="varchar" MaxLength="50" />
     <Property Name="Street" Type="varchar" MaxLength="50" />
@@ -40,23 +51,14 @@
     <Property Name="Gender" Type="int" />
     <Property Name="Phone_No" Type="varchar" MaxLength="50" />
     <Property Name="Email" Type="varchar" MaxLength="50" />
-    <Property Name="Birthdate" Type="date" />
-  </EntityType>
-  <EntityType Name="User">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="User_Name" Type="varchar" MaxLength="50" />
-    <Property Name="User_Email" Type="varchar" MaxLength="50" />
-    <Property Name="Password" Type="varchar" MaxLength="50" />
-    <Property Name="Re_Password" Type="varchar" MaxLength="50" />
+    <Property Name="Birthdate" Type="varchar" MaxLength="50" />
+    <Property Name="ResetPassCode" Type="varchar" MaxLength="50" />
   </EntityType>
   <EntityContainer Name="DatabaseStoreContainer">
     <EntitySet Name="Barangay" EntityType="Self.Barangay" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Book" EntityType="Self.Book" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Gender" EntityType="Self.Gender" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="Profile" EntityType="Self.Profile" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ResetPassword" EntityType="Self.ResetPassword" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
   </EntityContainer>
 </Schema>

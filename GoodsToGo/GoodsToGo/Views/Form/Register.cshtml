@@ -3,51 +3,235 @@
     ViewBag.Title = "Register";
     Layout = "~/Views/_LayoutPage2.cshtml";
 }
-<link rel="stylesheet" type="text/css" href="fcss/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="fcss/fontawesome-all.min.css">
-<link rel="stylesheet" type="text/css" href="fcss/iofrm-style.css">
-<link rel="stylesheet" type="text/css" href="fcss/iofrm-theme12.css">
+@using (Html.BeginForm("Register", "Form", new { Id = UrlParameter.Optional }, FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
 
-<div class="form-body">
-    <div class="row">
-        <div class="form-holder">
-            <div class="form-content">
-                <div class="form-items">
-                    <div class="website-logo-inside">
-                        <a href="index.html">
-                            <div class="logo">
-                                <img class="logo-size" src="fimages/logo-light.svg" alt="">
+
+<!-- Required meta tags -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- loader-->
+<link href="~/assets/css/pace.min.css" rel="stylesheet" />
+<script src="~/assets/js/pace.min.js"></script>
+
+<!--plugins-->
+<link href="~/assets/plugins/perfect-scrollbar/css/perfect-scrollbar.css" rel="stylesheet" />
+
+<!-- CSS Files -->
+<link href="~/assets/css/bootstrap.min.css" rel="stylesheet">
+<link href="~/assets/css/bootstrap-extended.css" rel="stylesheet">
+<link href="~/assets/css/style.css" rel="stylesheet">
+<link href="~/assets/css/icons.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+
+<!--start wrapper-->
+
+
+<div class="bg-white">
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <!--start wrapper-->
+    <div class="wrapper">
+        
+
+        <div class="">
+            <div class="row g-0 m-0">
+                <div class="col-xl-6 col-lg-2">
+                    <div class="login-cover-wrapper">
+                        <div class="card shadow-none">
+                            <div class="card-body">
+                                <div class="text-center">
+                                    <h4>Join us today</h4>
+                                    <p>Enter your email and password to register</p>
+                                </div>
+
+
+                                <form class="form-body row g-3">
+                                    @Html.HiddenFor(model => model.Id)
+                                    <h6 class="mb-0 text-uppercase">Location</h6>
+                                    <hr>
+                                    
+                                    <label class="form-label">Barangay <span class="text-danger">*</span></label>
+                                    <div class="input-group mb-3">
+                                        <div class="col-12">
+
+                                          
+                                            @Html.DropDownListFor(model => model.BarangayID, ViewBag.BrgyList as SelectList, new { @class = "form-control" })
+                                            @Html.ValidationMessageFor(model => model.BarangayID, "", new { @class = "text-danger" })
+
+
+
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        @Html.ValidationMessageFor(model => model.House_No, "", new { @class = "text-danger" })
+                                        <label class="form-label">House/Lot & Block No. (Optional) </label>
+                                        @Html.EditorFor(model => model.House_No, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.House_No, "", new { @class = "text-danger" })
+                                    </div>
+                                    <div class="col-12">
+                                       
+                                        <label class="form-label">Street <span class="text-danger">*</span></label>
+                                        @Html.EditorFor(model => model.Street, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.Street, "", new { @class = "text-danger" })
+                                    </div>
+                                    <div class="col-12">
+                                     
+                                        <label class="form-label">Subd./Phase/Purok </label>
+                                        @Html.EditorFor(model => model.Purok_No, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.House_No, "", new { @class = "text-danger" })
+                                    </div>
+
+                                    <h6 class="mb-0 text-uppercase">Personal Information</h6>
+                                    <hr>
+
+                                    <div class="col-12">
+                                      
+                                        <label class="form-label">First Name <span class="text-danger">*</span></label>
+                                        @Html.EditorFor(model => model.First_Name, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.First_Name, "", new { @class = "text-danger" })
+                                    </div>
+                                    <div class="col-12">
+                                      
+                                        <label class="form-label">Middle Name </label>
+                                        @Html.EditorFor(model => model.Middle_Name, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.Middle_Name, "", new { @class = "text-danger" })
+                                    </div>
+                                    <div class="col-12">
+
+                                        <label class="form-label">Last Name <span class="text-danger">*</span></label>
+                                        @Html.EditorFor(model => model.Last_Name, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.Last_Name, "", new { @class = "text-danger" })
+                                    </div>
+                                    <div class="col-12">
+                                       
+                                        <label class="form-label">Gender <span class="text-danger">*</span></label>
+                                        @Html.DropDownListFor(model => model.Gender, ViewBag.GenderList as SelectList, new { @class = "form-select" })
+                                        @Html.ValidationMessageFor(model => model.Gender, "", new { @class = "text-danger" })
+
+
+                                    </div>
+                                    <div class="col-12">
+                                      
+                                        <label class="form-label">Birthdate <span class="text-danger">*</span></label>
+                                        @Html.EditorFor(model => model.Birthdate, new { htmlAttributes = new { @class = "form-control", @type = "date" } })
+                                        @Html.ValidationMessageFor(model => model.Birthdate, "", new { @class = "text-danger" })
+                                    </div>
+
+                                    <div class="col-12">
+                                      
+                                        <label class="form-label">Phone Number<span class="text-danger">*</span></label>
+                                        <div class="input-group mb-3">
+                                            <span class="input-group-text" id="basic-addon">+63</span>
+                                            @Html.EditorFor(model => model.Phone_No, new { htmlAttributes = new { @class = "form-control", @placeholder = "Phone Number" } })
+                                            @Html.ValidationMessageFor(model => model.Phone_No, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                       
+                                        <label class="form-label">Email<span class="text-danger">*</span></label>
+                                        @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                                    </div>
+                                    <div class="col-12">
+                                    
+                                        <label class="form-label">Password<span class="text-danger">*</span></label>
+                                        @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                                       
+                                    </div>
+                                    <div class="col-12">
+                                        
+                                        <label class="form-label">Confirm Password<span class="text-danger">*</span></label>
+                                        @Html.EditorFor(model => model.Re_Password, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.Re_Password, "", new { @class = "text-danger" })
+                                    </div>
+                                    <div class="col-12 col-lg-12">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+                                            <strong> I have read, understood </strong> and <strong> accepted </strong> the <a href="/privacy-policy" target="_blank"> Privacy Policy </a> and
+                                            <a href="/terms-conditions" target="_blank"> Terms & Conditions. </a>
+
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-lg-12">
+                                        <div class="d-grid">
+                                            <button id="submit" type="submit" value="Register"class="btn btn-primary">Sign up</button>
+                                        </div>
+                                    </div>
+
+
+
+                                </form>
+                                <div class="col-12 col-lg-12 text-center">
+                                    <p class="mb-0">
+                                        Already have an account? <a href=@Url.Action("Login", "Form")>
+                                            Sign
+
+                                            in
+                                        </a>
+                                    </p>
+                                </div>
                             </div>
-                        </a>
-                    </div>
-                    <h3>Taguig Public Goods Distribution</h3>
-                    <p>Goods To Go</p>
-                    <div class="page-links">
-                        <a href=@Url.Action("Login", "Form")>Login</a><a href=@Url.Action("Register","Sign") class="active">Register</a>
-                    </div>
-                    <form action="#" method="post">
-
-                        @Html.ValidationMessageFor(model => model.User_Name, "", new { @class = "text-danger" })
-                        @Html.EditorFor(model => model.User_Name, new { htmlAttributes = new { @class = "form-control", placeholder = "Full Name" } })
-                        @Html.ValidationMessageFor(model => model.User_Email, "", new { @class = "text-danger" })
-                        @Html.EditorFor(model => model.User_Email, new { htmlAttributes = new { @class = "form-control", placeholder = "E-mail Address" } })
-                        @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
-                        @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control", placeholder = "Password" } })
-                        @Html.ValidationMessageFor(model => model.Re_Password, "", new { @class = "text-danger" })
-                        @Html.EditorFor(model => model.Re_Password, new { htmlAttributes = new { @class = "form-control", placeholder = "Confirm Password" } })
-                        <div class="form-button">
-                            <button id="submit" type="submit" value="Register" class="ibtn">Register</button>
                         </div>
-                    </form>
+                    </div>
 
                 </div>
+                <div class="col-xl-6 col-lg-12">
+                    <div class="position-fixed top-0 h-100 d-xl-block d-none register-cover-img">
+                    </div>
+                </div>
             </div>
+            <!--end row-->
         </div>
     </div>
-</div>
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+     </div>
+}
 
-<script src="~/fjs/jquery.min.js"></script>
-<script src="~/fjs/popper.min.js"></script>
-<script src="~/fjs/bootstrap.min.js"></script>
-<script src="~/js/main.js"></script>
+
+
+
+
+
 

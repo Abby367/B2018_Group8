@@ -15,9 +15,20 @@ namespace GoodsToGo.Models
     public partial class User
     {
         public int Id { get; set; }
-        public string User_Name { get; set; }
-        public string User_Email { get; set; }
         public string Password { get; set; }
         public string Re_Password { get; set; }
+        public Nullable<int> BarangayID { get; set; }
+        public string House_No { get; set; }
+        public string Street { get; set; }
+        public string Purok_No { get; set; }
+        public string First_Name { get; set; }
+        public string Middle_Name { get; set; }
+        public string Last_Name { get; set; }
+        public Nullable<int> Suffix { get; set; }
+        public Nullable<int> Gender { get; set; }
+        public string Phone_No { get; set; }
+        public string Email { get; set; }
+        public string Birthdate { get; set; }
+        public string ResetPassCode { get; set; }
     }
 }

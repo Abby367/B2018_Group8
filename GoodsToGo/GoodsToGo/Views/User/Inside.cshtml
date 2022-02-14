@@ -1,9 +1,11 @@
-﻿
+﻿@model GoodsToGo.Models.User
+    @using System.Security.Claims;
 @{
     ViewBag.Title = "Inside";
     Layout = "~/Views/_LayoutPage3.cshtml";
+    var id = ViewContext.RouteData.Values["id"];
 }
-
+  
 <link href="~/assets/css/pace.min.css" rel="stylesheet" />
 <script src="~/assets/js/pace.min.js"></script>
 
@@ -51,12 +53,13 @@
                 <img src="~/assets/images/logo-icon-2.png" class="logo-icon" alt="logo icon" />
             </div>
             <div>
-
+                <h4 class="logo-text">Goods To Go</h4>
             </div>
             <div class="toggle-icon ms-auto">
                 <ion-icon name="menu-sharp"></ion-icon>
             </div>
         </div>
+        
         <!--navigation-->
         <ul class="metismenu" id="menu">
             <li>
@@ -68,7 +71,7 @@
                 </a>
             </li>
             <li>
-                <a href=@Url.Action("Details", "User", new {id = "0"})>
+                <a href=@Url.Action("Details", "User", new { Id = ViewData["um"] })>
                     <div class="parent-icon">
                         <ion-icon name="person-circle-sharp"></ion-icon>
                     </div>
@@ -76,8 +79,8 @@
                 </a>
             </li>
             <li>
-
-                <a href=@Url.Action("Edit", "User", new {id =0 })>
+                
+                <a href=@Url.Action("Edit", "User", new {Id= ViewData["um"] })>
                     <div class="parent-icon">
                         <ion-icon name="create-sharp"></ion-icon>
                     </div>
@@ -120,7 +123,7 @@
 
                 <ul class="navbar-nav align-items-center">
                     <li>
-                        <a href="index.html" class="logo-text">Goods To Go</a>
+                        <div class="logo-text">Hi! @ViewBag.name</div>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link dark-mode-icon" href="javascript:;">
@@ -169,39 +172,23 @@
             <!--end breadcrumb-->
 
             <div class="row row-cols-1 row-cols-lg-3">
-                <div class="col">
-                    <div class="card radius-10">
+                
+                <div class="col-12 col-lg-6">
+
+                    <div class="card bg-gradient-danger radius-10">
+
                         <div class="card-body">
                             <div class="d-flex align-items-center gap-2">
-                                <div class="fs-5">
-                                    <ion-icon name="person-add-outline"></ion-icon>
+                                <div class="fs-5 bg-transparent text-white">
+                                    <ion-icon name="book-outline"></ion-icon>
                                 </div>
                                 <div>
-                                    <a href=@Url.Action("CreateProfile", "User")>
-                                        Create
-
-                                        Profile
-                                    </a>
-                                </div>
-
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card radius-10">
-                        <div class="card-body">
-                            <div class="d-flex align-items-center gap-2">
-                                <div class="fs-5">
-                                    <ion-icon name="heart-outline"></ion-icon>
-                                </div>
-                                <div>
-                                    <a href=@Url.Action("Book", "User") class="mb-0">
+                                    <a href=@Url.Action("Book", "User", new { Id = ViewData["um"] }) class="mb-0 bg-transparent text-white">
                                         Book
 
                                         Schedule
                                     </a>
+                                   
                                 </div>
 
                             </div>
@@ -209,16 +196,16 @@
                         </div>
                     </div>
                 </div>
-                <div class="col">
+                <div class="col-12 col-lg-6">
                     <div class="card bg-gradient-purple radius-10">
 
                         <div class="card-body">
                             <div class="d-flex align-items-center gap-2">
-                                <div class="fs-5">
-                                    <ion-icon name="chatbox-outline"></ion-icon>
+                                <div class="fs-5 bg-transparent text-white">
+                                    <ion-icon name="heart-outline"></ion-icon>
                                 </div>
                                 <div>
-                                    <a href=@Url.Action("History", "User") class="mb-0">
+                                    <a href=@Url.Action("History", "User", new { Id = ViewData["un"] }) class="mb-0 bg-transparent text-white">
                                         History
                                     </a>
                                 </div>

@@ -17,10 +17,10 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Email" Type="varchar(max)" />
+          <Property Name="Email" Type="varchar" MaxLength="50" />
+          <Property Name="Name" Type="varchar" MaxLength="50" />
           <Property Name="Date" Type="varchar" MaxLength="50" />
           <Property Name="Time" Type="varchar" MaxLength="50" />
-          <Property Name="Name" Type="varchar(max)" />
         </EntityType>
         <EntityType Name="Gender">
           <Key>
@@ -29,11 +29,22 @@
           <Property Name="GenderID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="GenderName" Type="varchar" MaxLength="50" />
         </EntityType>
-        <EntityType Name="Profile">
+        <EntityType Name="ResetPassword">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="NewPassword" Type="varchar" MaxLength="50" />
+          <Property Name="ConfirmPassword" Type="varchar" MaxLength="50" />
+          <Property Name="ResetCode" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="User">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Password" Type="varchar" MaxLength="50" />
+          <Property Name="Re_Password" Type="varchar" MaxLength="50" />
           <Property Name="BarangayID" Type="int" />
           <Property Name="House_No" Type="varchar" MaxLength="50" />
           <Property Name="Street" Type="varchar" MaxLength="50" />
@@ -45,45 +56,26 @@
           <Property Name="Gender" Type="int" />
           <Property Name="Phone_No" Type="varchar" MaxLength="50" />
           <Property Name="Email" Type="varchar" MaxLength="50" />
-          <Property Name="Birthdate" Type="date" />
-        </EntityType>
-        <EntityType Name="User">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="User_Name" Type="varchar" MaxLength="50" />
-          <Property Name="User_Email" Type="varchar" MaxLength="50" />
-          <Property Name="Password" Type="varchar" MaxLength="50" />
-          <Property Name="Re_Password" Type="varchar" MaxLength="50" />
+          <Property Name="Birthdate" Type="varchar" MaxLength="50" />
+          <Property Name="ResetPassCode" Type="varchar" MaxLength="50" />
         </EntityType>
         <EntityContainer Name="DatabaseStoreContainer">
           <EntitySet Name="Barangay" EntityType="Self.Barangay" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Book" EntityType="Self.Book" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Gender" EntityType="Self.Gender" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Profile" EntityType="Self.Profile" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ResetPassword" EntityType="Self.ResetPassword" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="Database" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityType Name="User">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="User_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="User_Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Re_Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-        </EntityType>
         <EntityContainer Name="Database1" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="Users" EntityType="Self.User" />
           <EntitySet Name="Barangays" EntityType="Database.Barangay" />
-          <EntitySet Name="Books" EntityType="Database.Book" />
           <EntitySet Name="Genders" EntityType="Database.Gender" />
-          <EntitySet Name="Profiles" EntityType="Database.Profile" />
+          <EntitySet Name="ResetPasswords" EntityType="Database.ResetPassword" />
+          <EntitySet Name="Books" EntityType="Database.Book" />
+          <EntitySet Name="Users" EntityType="Database.User" />
         </EntityContainer>
         <EntityType Name="Barangay">
           <Key>
@@ -92,16 +84,6 @@
           <Property Name="BarangayID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Barangay_Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
         </EntityType>
-        <EntityType Name="Book">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Email" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="Date" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Time" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-        </EntityType>
         <EntityType Name="Gender">
           <Key>
             <PropertyRef Name="GenderID" />
@@ -109,11 +91,32 @@
           <Property Name="GenderID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="GenderName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
-        <EntityType Name="Profile">
+        <EntityType Name="ResetPassword">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="NewPassword" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ConfirmPassword" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ResetCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Book">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Date" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Time" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Re_Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="BarangayID" Type="Int32" />
           <Property Name="House_No" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Street" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
@@ -125,7 +128,8 @@
           <Property Name="Gender" Type="Int32" />
           <Property Name="Phone_No" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Birthdate" Type="DateTime" Precision="0" />
+          <Property Name="Birthdate" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ResetPassCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -133,33 +137,11 @@
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="DatabaseStoreContainer" CdmEntityContainer="Database1">
-          <EntitySetMapping Name="Users">
-            <EntityTypeMapping TypeName="Database.User">
-              <MappingFragment StoreEntitySet="User">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="User_Name" ColumnName="User_Name" />
-                <ScalarProperty Name="User_Email" ColumnName="User_Email" />
-                <ScalarProperty Name="Password" ColumnName="Password" />
-                <ScalarProperty Name="Re_Password" ColumnName="Re_Password" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="Barangays">
             <EntityTypeMapping TypeName="Database.Barangay">
               <MappingFragment StoreEntitySet="Barangay">
                 <ScalarProperty Name="Barangay_Name" ColumnName="Barangay_Name" />
                 <ScalarProperty Name="BarangayID" ColumnName="BarangayID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Books">
-            <EntityTypeMapping TypeName="Database.Book">
-              <MappingFragment StoreEntitySet="Book">
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="Time" ColumnName="Time" />
-                <ScalarProperty Name="Date" ColumnName="Date" />
-                <ScalarProperty Name="Email" ColumnName="Email" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -171,9 +153,31 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Profiles">
-            <EntityTypeMapping TypeName="Database.Profile">
-              <MappingFragment StoreEntitySet="Profile">
+          <EntitySetMapping Name="ResetPasswords">
+            <EntityTypeMapping TypeName="Database.ResetPassword">
+              <MappingFragment StoreEntitySet="ResetPassword">
+                <ScalarProperty Name="ResetCode" ColumnName="ResetCode" />
+                <ScalarProperty Name="ConfirmPassword" ColumnName="ConfirmPassword" />
+                <ScalarProperty Name="NewPassword" ColumnName="NewPassword" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Books">
+            <EntityTypeMapping TypeName="Database.Book">
+              <MappingFragment StoreEntitySet="Book">
+                <ScalarProperty Name="Time" ColumnName="Time" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="Database.User">
+              <MappingFragment StoreEntitySet="User">
+                <ScalarProperty Name="ResetPassCode" ColumnName="ResetPassCode" />
                 <ScalarProperty Name="Birthdate" ColumnName="Birthdate" />
                 <ScalarProperty Name="Email" ColumnName="Email" />
                 <ScalarProperty Name="Phone_No" ColumnName="Phone_No" />
@@ -186,11 +190,13 @@
                 <ScalarProperty Name="Street" ColumnName="Street" />
                 <ScalarProperty Name="House_No" ColumnName="House_No" />
                 <ScalarProperty Name="BarangayID" ColumnName="BarangayID" />
+                <ScalarProperty Name="Re_Password" ColumnName="Re_Password" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-        </EntityContainerMapping>
+          </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
   </edmx:Runtime>

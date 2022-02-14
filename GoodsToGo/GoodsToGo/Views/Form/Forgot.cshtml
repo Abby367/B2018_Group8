@@ -1,55 +1,65 @@
-﻿
+﻿@model GoodsToGo.Models.User
 @{
     ViewBag.Title = "Forgot";
     Layout = "~/Views/_LayoutPage2.cshtml";
 }
-<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="css/fontawesome-all.min.css">
-<link rel="stylesheet" type="text/css" href="css/iofrm-style.css">
+<!-- Required meta tags -->
 
-<div class="form-body">
-    <div class="row">
-        <div class="form-holder">
-            <div class="form-content">
-                <div class="form-items">
-                    <div class="website-logo-inside">
-                        <a href="index.html">
-                            <div class="logo">
-                                <img class="logo-size" src="fimages/logo-light.svg" alt="">
+<!-- loader-->
+<link href="~/assets/css/pace.min.css" rel="stylesheet" />
+<script src="~/assets/js/pace.min.js"></script>
+
+<!--plugins-->
+<link href="~/assets/plugins/perfect-scrollbar/css/perfect-scrollbar.css" rel="stylesheet" />
+
+<!-- CSS Files -->
+<link href="~/assets/css/bootstrap.min.css" rel="stylesheet">
+<link href="~/assets/css/bootstrap-extended.css" rel="stylesheet">
+<link href="~/assets/css/style.css" rel="stylesheet">
+<link href="~/assets/css/icons.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+
+
+<div class="bg-white">
+
+    <!--start wrapper-->
+    <div class="wrapper">
+        <div class="">
+            <div class="row g-0 m-0">
+                <div class="col-xl-6 col-lg-12">
+                    <div class="login-cover-wrapper">
+                        <div class="card shadow-none">
+                            <div class="card-body p-4">
+                                <div class="text-center text-danger">
+                                    @ViewBag.Message
+                                </div>
+                                <div class="text-center">
+                                    <h4>Reset password</h4>
+                                    <p>Please enter your registered email address below to receive an email containing a link, to reset your password.</p>
+                                </div>
+                                <form action="#" method="post"class="form-body row g-3">
+                                    <div class="col-12">
+                                        <label for="inputEmail" class="form-label">Email</label>
+                                        @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                                        @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
+                                    </div>
+                                    <div class="col-12 col-lg-12">
+                                        <div class="d-grid">
+                                            <button type="submit" value="Submit" class="btn btn-primary">Send</button>
+                                        </div>
+                                    </div>
+                                </form>
                             </div>
-                        </a>
-                    </div>
-                    <h3>Password Reset</h3>
-                    <p>To reset your password, enter the email address you use to sign in to iofrm</p>
-                    <form>
-                        <input class="form-control" type="text" name="username" placeholder="E-mail Address" required>
-                        <div class="form-button full-width">
-                            <button id="submit" type="submit" class="ibtn btn-forget">Send Reset Link</button>
                         </div>
-                    </form>
+                    </div>
                 </div>
-                <div class="form-sent">
-                    <div class="website-logo-inside">
-                        <a href="index.html">
-                            <div class="logo">
-                                <img class="logo-size" src="fimages/logo-light.svg" alt="">
-                            </div>
-                        </a>
-                    </div>
-                    <div class="tick-holder">
-                        <div class="tick-icon"></div>
-                    </div>
-                    <h3>Password link sent</h3>
-                    <p>Please check your inbox iofrm@iofrmtemplate.io</p>
-                    <div class="info-holder">
-                        <span>Unsure if that email address was correct?</span> <a href="#">We can help</a>.
+                <div class="col-xl-6 col-lg-12">
+                    <div class="position-fixed top-0 h-100 d-xl-block d-none login-cover-img au-reset-password-cover">
                     </div>
                 </div>
             </div>
+            <!--end row-->
         </div>
     </div>
-</div>
-<script src="~fjs/jquery.min.js"></script>
-<script src="~fjs/popper.min.js"></script>
-<script src="~fjs/bootstrap.min.js"></script>
-<script src="~js/main.js"></script>
+    </div>
+    <!--end wrapper-->
