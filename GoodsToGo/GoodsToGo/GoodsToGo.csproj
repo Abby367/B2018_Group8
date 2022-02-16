@@ -124,6 +124,9 @@
     <Content Include="images\IMG_20220125_201416.jpg" />
     <Content Include="images\IMG_20220126_134232.jpg" />
     <Content Include="images\logo.png" />
+    <Content Include="images\privacy-policy-service-documents-terms-of-use-conc-2022-02-10-06-32-39-utc.jpg" />
+    <Content Include="images\safety-2021-08-30-06-13-22-utc.jpg" />
+    <Content Include="images\the-human-hand-fills-the-last-missing-elements-of-2021-08-30-05-44-50-utc.jpg" />
     <Content Include="Models\Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Model1.edmx</DependentUpon>
@@ -138,6 +141,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -166,6 +170,9 @@
       <DependentUpon>Model1.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\ResetPassword.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Table.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\User.cs">
@@ -200,6 +207,12 @@
     <Content Include="Views\User\Book.cshtml" />
     <Content Include="Views\User\Details.cshtml" />
     <Content Include="Views\Form\ResetPassword.cshtml" />
+    <Content Include="Views\_LayoutPage4.cshtml" />
+    <Content Include="Views\Admin\Admin.cshtml" />
+    <Content Include="Views\User\Privacy.cshtml" />
+    <Content Include="Views\User\Term.cshtml" />
+    <Content Include="Views\Admin\Userxd.cshtml" />
+    <Content Include="Views\Admin\Appointment.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

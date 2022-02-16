@@ -38,6 +38,17 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="Tables">
+      <EntityTypeMapping TypeName="Database.Table">
+        <MappingFragment StoreEntitySet="Table">
+          <ScalarProperty Name="Time" ColumnName="Time" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="Users">
       <EntityTypeMapping TypeName="Database.User">
         <MappingFragment StoreEntitySet="User">
@@ -46,7 +57,6 @@
           <ScalarProperty Name="Email" ColumnName="Email" />
           <ScalarProperty Name="Phone_No" ColumnName="Phone_No" />
           <ScalarProperty Name="Gender" ColumnName="Gender" />
-          <ScalarProperty Name="Suffix" ColumnName="Suffix" />
           <ScalarProperty Name="Last_Name" ColumnName="Last_Name" />
           <ScalarProperty Name="Middle_Name" ColumnName="Middle_Name" />
           <ScalarProperty Name="First_Name" ColumnName="First_Name" />

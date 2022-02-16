@@ -34,7 +34,8 @@ namespace GoodsToGo.Views
         
         public ActionResult Edit(int id)
         {
-           
+            var obj = db.Users.FirstOrDefault(x => x.Email == System.Web.HttpContext.Current.User.Identity.Name).Id;
+            ViewData["um"] = obj;
             ViewBag.BrgyList = new SelectList(GetBarangayList(), "BarangayID", "Barangay_Name");
             ViewBag.GenderList = new SelectList(GetGenderList(), "GenderID", "GenderName");
            
@@ -43,7 +44,11 @@ namespace GoodsToGo.Views
         [HttpPost]
         public ActionResult Edit(User user)
         {
-           
+            var obj = db.Users.FirstOrDefault(x => x.Email == System.Web.HttpContext.Current.User.Identity.Name).Id;
+            ViewData["um"] = obj;
+          
+          
+
             ViewBag.BrgyList = new SelectList(GetBarangayList(), "BarangayID", "Barangay_Name");
             ViewBag.GenderList = new SelectList(GetGenderList(), "GenderID", "GenderName");
             
@@ -60,7 +65,8 @@ namespace GoodsToGo.Views
         [HttpGet]
         public ActionResult History(int id)
         {
-
+            var obj = db.Users.FirstOrDefault(x => x.Email == System.Web.HttpContext.Current.User.Identity.Name).Id;
+            ViewData["um"] = obj;
             return View(db.Books.Where(x => x.Id == id).FirstOrDefault());
         
 
@@ -68,6 +74,10 @@ namespace GoodsToGo.Views
         [HttpPost]
         public ActionResult History(Book um)
         {
+            var obj = db.Users.FirstOrDefault(x => x.Email == System.Web.HttpContext.Current.User.Identity.Name).Id;
+            ViewData["um"] = obj;
+           
+           
             if (ModelState.IsValid)
             {
                 var data = db.Books.ToList();
@@ -83,12 +93,18 @@ namespace GoodsToGo.Views
         [HttpGet]
         public ActionResult Book()
         {
+            var obj = db.Users.FirstOrDefault(x => x.Email == System.Web.HttpContext.Current.User.Identity.Name).Id;
+            ViewData["um"] = obj;
             return View();
         }
 
         [HttpPost]
         public ActionResult Book(Book ut)
         {
+            var obj = db.Users.FirstOrDefault(x => x.Email == System.Web.HttpContext.Current.User.Identity.Name).Id;
+            ViewData["um"] = obj;
+           
+           
             var an = db.Users.FirstOrDefault(x => x.Email == System.Web.HttpContext.Current.User.Identity.Name).Id;
             var om = db.Users.FirstOrDefault(x => x.Email == System.Web.HttpContext.Current.User.Identity.Name).Email;
             var fn = db.Users.FirstOrDefault(x => x.Email == System.Web.HttpContext.Current.User.Identity.Name).First_Name;
@@ -124,6 +140,8 @@ namespace GoodsToGo.Views
       
         public ActionResult Details(int id)
         {
+            var obj = db.Users.FirstOrDefault(x => x.Email == System.Web.HttpContext.Current.User.Identity.Name).Id;
+            ViewData["um"] = obj;
             ViewBag.BrgyList = new SelectList(GetBarangayList(), "BarangayID", "Barangay_Name");
 
             ViewBag.GenderList = new SelectList(GetGenderList(), "GenderID", "GenderName");
@@ -134,6 +152,12 @@ namespace GoodsToGo.Views
         [ValidateAntiForgeryToken]
         public ActionResult Details(User user)
         {
+            var obj = db.Users.FirstOrDefault(x => x.Email == System.Web.HttpContext.Current.User.Identity.Name).Id;
+            ViewData["um"] = obj;
+            var obm = db.Users.FirstOrDefault(x => x.Email == System.Web.HttpContext.Current.User.Identity.Name).First_Name;
+            ViewBag.name = obm;
+            var om = db.Books.FirstOrDefault(x => x.Email == System.Web.HttpContext.Current.User.Identity.Name).Id;
+            ViewData["un"] = om;
             ViewBag.BrgyList = new SelectList(GetBarangayList(), "BarangayID", "Barangay_Name");
 
             ViewBag.GenderList = new SelectList(GetGenderList(), "GenderID", "GenderName");
@@ -155,7 +179,18 @@ namespace GoodsToGo.Views
             return RedirectToAction("Index", "Home");
         }
 
-
+        public ActionResult Privacy()
+        {
+            var obj = db.Users.FirstOrDefault(x => x.Email == System.Web.HttpContext.Current.User.Identity.Name).Id;
+            ViewData["um"] = obj;
+            return View();
+        }
+        public ActionResult Term()
+        {
+            var obj = db.Users.FirstOrDefault(x => x.Email == System.Web.HttpContext.Current.User.Identity.Name).Id;
+            ViewData["um"] = obj;
+            return View();
+        }
 
         public List<Barangay> GetBarangayList()
         {

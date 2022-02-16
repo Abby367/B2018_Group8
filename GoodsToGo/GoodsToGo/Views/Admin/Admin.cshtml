@@ -1,11 +1,9 @@
-﻿@model GoodsToGo.Models.User
-    @using System.Security.Claims;
+﻿
 @{
-    ViewBag.Title = "Inside";
-    Layout = "~/Views/_LayoutPage3.cshtml";
-    var id = ViewContext.RouteData.Values["id"];
+    ViewBag.Title = "Admin";
+    Layout = "~/Views/_LayoutPage4.cshtml";
 }
-  
+
 <link href="~/assets/css/pace.min.css" rel="stylesheet" />
 <script src="~/assets/js/pace.min.js"></script>
 
@@ -59,11 +57,11 @@
                 <ion-icon name="menu-sharp"></ion-icon>
             </div>
         </div>
-        
+
         <!--navigation-->
         <ul class="metismenu" id="menu">
             <li>
-                <a href=@Url.Action("Inside", "User")>
+                <a href=@Url.Action("Admin","Admin")>
                     <div class="parent-icon">
                         <ion-icon name="home-sharp"></ion-icon>
                     </div>
@@ -71,45 +69,26 @@
                 </a>
             </li>
             <li>
-                <a href=@Url.Action("Details", "User", new { Id = ViewData["um"] })>
+                <a href=@Url.Action("Userxd","Admin")>
                     <div class="parent-icon">
                         <ion-icon name="person-circle-sharp"></ion-icon>
                     </div>
-                    <div class="menu-title">User Profile</div>
+                    <div class="menu-title">User Information</div>
                 </a>
             </li>
             <li>
-                
-                <a href=@Url.Action("Edit", "User", new { Id = ViewData["um"] })>
+                <a href=@Url.Action("Appointment", "Admin")>
                     <div class="parent-icon">
                         <ion-icon name="create-sharp"></ion-icon>
                     </div>
-                    <div class="menu-title">Edit Profile</div>
+                    <div class="menu-title">Appointment Information</div>
                 </a>
             </li>
 
 
-            <li>
-                <a href=@Url.Action("Privacy","User")>
-                    <div class="parent-icon">
-                        <ion-icon name="receipt-sharp"></ion-icon>
-                    </div>
-                    <div class="menu-title">Privacy And Policy</div>
-                </a>
-            </li>
-            <li>
-                <a href=@Url.Action("Term","User")>
-                    <div class="parent-icon">
-                        <ion-icon name="shield-checkmark-sharp"></ion-icon>
-                    </div>
-                    <div class="menu-title">Terms And Condition </div>
-                </a>
-
-            </li>
 
         </ul>
-        <!--end navigation-->
-    </aside>
+                  </aside>
     <!--end sidebar -->
     <!--start top header-->
     <header class="top-header">
@@ -123,7 +102,7 @@
 
                 <ul class="navbar-nav align-items-center">
                     <li>
-                        <div class="logo-text">Hi! @ViewBag.name</div>
+                        <div class="logo-text">Hi! Admin</div>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link dark-mode-icon" href="javascript:;">
@@ -172,7 +151,7 @@
             <!--end breadcrumb-->
 
             <div class="row row-cols-1 row-cols-lg-3">
-                
+
                 <div class="col-12 col-lg-6">
 
                     <div class="card bg-gradient-danger radius-10">
@@ -183,12 +162,12 @@
                                     <ion-icon name="book-outline"></ion-icon>
                                 </div>
                                 <div>
-                                    <a href=@Url.Action("Book", "User", new { Id = ViewData["um"] }) class="mb-0 bg-transparent text-white">
-                                        Book
+                                    <a href=@Url.Action("Userxd", "Admin") class="mb-0 bg-transparent text-white">
+                                        User
 
-                                        Schedule
+                                        Information
                                     </a>
-                                   
+
                                 </div>
 
                             </div>
@@ -205,8 +184,9 @@
                                     <ion-icon name="heart-outline"></ion-icon>
                                 </div>
                                 <div>
-                                    <a href=@Url.Action("History", "User", new { Id = ViewData["un"] }) class="mb-0 bg-transparent text-white">
-                                        History
+                                    <a href=@Url.Action("Appointment", "Admin") class="mb-0 bg-transparent text-white">
+                                        Appointment
+                                        Information
                                     </a>
                                 </div>
 
@@ -260,6 +240,7 @@
 
 <!-- Main JS-->
 <script src="~/assets/js/main.js"></script>
+
 
 
 

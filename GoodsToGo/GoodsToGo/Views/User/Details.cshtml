@@ -62,7 +62,7 @@
         <!--navigation-->
         <ul class="metismenu" id="menu">
             <li>
-                <a href=@Url.Action("Index", "User")>
+                <a href=@Url.Action("Inside", "User")>
                     <div class="parent-icon">
                         <ion-icon name="home-sharp"></ion-icon>
                     </div>
@@ -70,7 +70,7 @@
                 </a>
             </li>
             <li>
-                <a href="pages-user-profile.html">
+                <a href=@Url.Action("Details", "User", new { Id = ViewData["um"] })>
                     <div class="parent-icon">
                         <ion-icon name="person-circle-sharp"></ion-icon>
                     </div>
@@ -78,7 +78,8 @@
                 </a>
             </li>
             <li>
-                <a href=@Url.Action("Edit","User")>
+
+                <a href=@Url.Action("Edit", "User", new { Id = ViewData["um"] })>
                     <div class="parent-icon">
                         <ion-icon name="create-sharp"></ion-icon>
                     </div>
@@ -88,7 +89,7 @@
 
 
             <li>
-                <a href="pages-invoices.html">
+                <a href=@Url.Action("Privacy","User")>
                     <div class="parent-icon">
                         <ion-icon name="receipt-sharp"></ion-icon>
                     </div>
@@ -96,7 +97,7 @@
                 </a>
             </li>
             <li>
-                <a href="pages-to-do.html">
+                <a href=@Url.Action("Term","User")>
                     <div class="parent-icon">
                         <ion-icon name="shield-checkmark-sharp"></ion-icon>
                     </div>
@@ -242,21 +243,32 @@
                                                         <label class="form-label">Email<span class="text-danger">*</span></label>
                                                         @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
                                                     </div>
-                                                </div>
-
-                                                <div class="col-12">
-                                                    <div class="d-grid">
-                                                        <button type="submit" value="Submit" class="btn btn-primary">Close</button>
-
+                                                    <div class="col-12">
+                                                        <label class="form-label">Password<span class="text-danger">*</span></label>
+                                                        @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control" } })
                                                     </div>
                                                 </div>
-
-
+                                                <div class="col-12">
+                                                    <label class="form-label">Confirm Password<span class="text-danger">*</span></label>
+                                                    @Html.EditorFor(model => model.Re_Password, new { htmlAttributes = new { @class = "form-control" } })
+                                                </div>
                                             </div>
+
+                                            <div class="col-12">
+                                                <div class="d-grid">
+                                                    <button type="submit" value="Submit" class="btn btn-primary">Close</button>
+
+                                                </div>
+                                            </div>
+
+
                                         </div>
+
+                                    </div>
+                                </form>
                                     </div>
                                     
-                                </form>
+                               
 
 
                             </div>
@@ -269,7 +281,7 @@
         <!--end row-->
         <!--end row-->
     </div>
-</div>
+
 }
 
 <!-- end page content-->

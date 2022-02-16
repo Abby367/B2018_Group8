@@ -1,24 +1,36 @@
-﻿@model GoodsToGo.Models.Book
+﻿
 @{
-    ViewBag.Title = "Book";
+    ViewBag.Title = "Term";
     Layout = "~/Views/_LayoutPage3.cshtml";
 }
 
- <!-- loader-->
-<link href="assets/css/pace.min.css" rel="stylesheet" />
-<script src="assets/js/pace.min.js"></script>
+
+
+<link href="~/assets/css/pace.min.css" rel="stylesheet" />
+<script src="~/assets/js/pace.min.js"></script>
 
 <!--plugins-->
-<link href="~/assets/plugins/perfect-scrollbar/css/perfect-scrollbar.css" rel="stylesheet" />
+
+<link href="~/assets/plugins/input-tags/css/tagsinput.css" rel="stylesheet" />
+
+<!-- CSS Files -->
+<link href="~/assets/css/bootstrap.min.css" rel="stylesheet">
+<link href="~/assets/css/bootstrap-extended.css" rel="stylesheet">
+<link href="~/assets/css/style.css" rel="stylesheet">
+<link href="~/assets/css/icons.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+
+
 <link href="~/assets/plugins/simplebar/css/simplebar.css" rel="stylesheet" />
+<link href="~/assets/plugins/perfect-scrollbar/css/perfect-scrollbar.css" rel="stylesheet" />
 <link href="~/assets/plugins/metismenu/css/metisMenu.min.css" rel="stylesheet" />
 <link href="~/assets/plugins/datetimepicker/css/classic.css" rel="stylesheet" />
 <link href="~/assets/plugins/datetimepicker/css/classic.time.css" rel="stylesheet" />
 <link href="~/assets/plugins/datetimepicker/css/classic.date.css" rel="stylesheet" />
-<link rel="~/stylesheet" href="assets/plugins/bootstrap-material-datetimepicker/css/bootstrap-material-datetimepicker.min.css">
-<link rel="~/stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet" href="~/assets/plugins/bootstrap-material-datetimepicker/css/bootstrap-material-datetimepicker.min.css">
 
 <!-- CSS Files -->
+<script src="~/js/bootstrap.min.js"></script>
 <link href="~/assets/css/bootstrap.min.css" rel="stylesheet">
 <link href="~/assets/css/bootstrap-extended.css" rel="stylesheet">
 <link href="~/assets/css/style.css" rel="stylesheet">
@@ -29,6 +41,10 @@
 <link href="~/assets/css/dark-theme.css" rel="stylesheet" />
 <link href="~/assets/css/semi-dark.css" rel="stylesheet" />
 <link href="~/assets/css/header-colors.css" rel="stylesheet" />
+
+
+
+
 
 
 <!--start wrapper-->
@@ -109,27 +125,24 @@
                 </div>
 
                 <div class="top-navbar-right ms-auto">
-
-
                     <ul class="navbar-nav align-items-center">
-                        <li>
-                            <a href="index.html" class="logo-text">Goods To Go</a>
-                        </li>
+
                         <li class="nav-item">
                             <a class="nav-link dark-mode-icon" href="javascript:;">
                                 <div class="mode-icon">
                                     <ion-icon name="moon-sharp"></ion-icon>
                                 </div>
                             </a>
+
                         </li>
                     </ul>
-
 
 
                 </div>
             </nav>
         </header>
-        !-- start page content wrapper-->
+        <!--end top header-->
+        <!-- start page content wrapper-->
         <div class="page-content-wrapper">
             <!-- start page content-->
             <div class="page-content">
@@ -141,70 +154,43 @@
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb mb-0 p-0 align-items-center">
                                 <li class="breadcrumb-item">
-                                    <a href="javascript:;">
-                                        <ion-icon name="home-outline"></ion-icon>
-                                    </a>
+                                    <a href="javascript:;"><ion-icon name="home-outline"></ion-icon></a>
                                 </li>
-                                <li class="breadcrumb-item active" aria-current="page">Book</li>
+                                <li class="breadcrumb-item active" aria-current="page">Privacy And Policy</li>
                             </ol>
                         </nav>
                     </div>
-                   
                 </div>
-                <div class="row">
-                    <div class="col-xl-8 mx-auto">
+                <!--end breadcrumb-->
 
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="border p-3 rounded">
-                                    <h6 class="mb-0 text-uppercase">Appointment</h6>
-                                    <hr>
-                                    <form action="#" method="post" class="row g-3">
-                                    
-                                        <div class="col-12">
-
-                                            <div class="mb-3">
-                                                @Html.ValidationMessageFor(model => model.Date, "", new { @class = "text-danger" })
-                                                <label class="form-label">Select Date<span class="text-danger">*</span></label>
-                                                @Html.EditorFor(model => model.Date, new { htmlAttributes = new { @class = "form-control datepicker", @type = "date" } })
-                                            </div>
-                                        </div>
-                                        <div class="col-12">
-
-                                            <div class="mb-3">
-                                                @Html.ValidationMessageFor(model => model.Time, "", new { @class = "text-danger" })
-                                                <label class="form-label">Select Time<span class="text-danger">*</span></label>
-
-                                                @Html.EditorFor(model => model.Time, new { htmlAttributes = new { @class = "form-control timepicker" } })
-                                            </div>
-                                        </div>
-                                        <div class="col-12">
-                                            <div class="d-grid">
-                                                <button type="submit" class="btn btn-primary" value="Send_To_Email">Submit</button>
-
-                                            </div>
-                                        </div>
-                                        <h1>@ViewBag.Message</h1>
-                                    </form>
+                <div class="card radius-10">
+                    <div class="row g-0">
 
 
 
 
-                                </div>
-                            </div>
-                        </div>
+                        <img src="~/images/the-human-hand-fills-the-last-missing-elements-of-2021-08-30-05-44-50-utc.jpg" class="img-fluid" alt="" />
+
                     </div>
+                    <!--end row-->
                 </div>
+            </div>
+            <div class="card radius-10">
+                <div class="card-body">
+                    <h4>Term and Condition</h4>
+                    <p>My permission to collect and handle my personal information is granted by the City Government of Taguig to operate a booking system for products and other related procedures to prevent COVID-19 infection is granted by me. I realize that my personal information is safeguarded by RA 10173, the Data Privacy Act of 2012, and that I am obligated to disclose honest information under RA 11469, the Bayanihan Heal as One Act, in order to get benefits.</p>
+                </div>
+                <div class="mt-5">
+                    <a href=@Url.Action("Inside","User") class="btn btn-primary btn-lg px-md-5 radius-30">Go Home</a>
+                    <a href=@Url.Action("Inside","User") class="btn btn-outline-dark btn-lg ms-3 px-md-5 radius-30">Back</a>
+                </div>
+
+
+
             </div>
         </div>
     </div>
 </div>
-<!-- end page content-->
-<!--end page content wrapper-->
-<!--Start Back To Top Button-->
-<a href="javaScript:;" class="back-to-top">
-    <ion-icon name="arrow-up-outline"></ion-icon>
-</a>
 <!-- JS Files-->
 <script src="~/assets/js/jquery.min.js"></script>
 <script src="~/assets/plugins/simplebar/js/simplebar.min.js"></script>

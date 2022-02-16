@@ -38,6 +38,16 @@
           <Property Name="ConfirmPassword" Type="varchar" MaxLength="50" />
           <Property Name="ResetCode" Type="varchar" MaxLength="50" />
         </EntityType>
+        <EntityType Name="Table">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Email" Type="varchar" MaxLength="50" />
+          <Property Name="Name" Type="varchar" MaxLength="50" />
+          <Property Name="Date" Type="varchar" MaxLength="50" />
+          <Property Name="Time" Type="varchar" MaxLength="50" />
+        </EntityType>
         <EntityType Name="User">
           <Key>
             <PropertyRef Name="Id" />
@@ -52,7 +62,6 @@
           <Property Name="First_Name" Type="varchar" MaxLength="50" />
           <Property Name="Middle_Name" Type="varchar" MaxLength="50" />
           <Property Name="Last_Name" Type="varchar" MaxLength="50" />
-          <Property Name="Suffix" Type="int" />
           <Property Name="Gender" Type="int" />
           <Property Name="Phone_No" Type="varchar" MaxLength="50" />
           <Property Name="Email" Type="varchar" MaxLength="50" />
@@ -64,6 +73,7 @@
           <EntitySet Name="Book" EntityType="Self.Book" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Gender" EntityType="Self.Gender" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ResetPassword" EntityType="Self.ResetPassword" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Table" EntityType="Self.Table" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
       </Schema></edmx:StorageModels>
@@ -75,6 +85,7 @@
           <EntitySet Name="Genders" EntityType="Database.Gender" />
           <EntitySet Name="ResetPasswords" EntityType="Database.ResetPassword" />
           <EntitySet Name="Books" EntityType="Database.Book" />
+          <EntitySet Name="Tables" EntityType="Database.Table" />
           <EntitySet Name="Users" EntityType="Database.User" />
         </EntityContainer>
         <EntityType Name="Barangay">
@@ -110,6 +121,16 @@
           <Property Name="Date" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Time" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
+        <EntityType Name="Table">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Date" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Time" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
         <EntityType Name="User">
           <Key>
             <PropertyRef Name="Id" />
@@ -124,7 +145,6 @@
           <Property Name="First_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Middle_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Last_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Suffix" Type="Int32" />
           <Property Name="Gender" Type="Int32" />
           <Property Name="Phone_No" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
@@ -174,6 +194,17 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="Tables">
+            <EntityTypeMapping TypeName="Database.Table">
+              <MappingFragment StoreEntitySet="Table">
+                <ScalarProperty Name="Time" ColumnName="Time" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="Users">
             <EntityTypeMapping TypeName="Database.User">
               <MappingFragment StoreEntitySet="User">
@@ -182,7 +213,6 @@
                 <ScalarProperty Name="Email" ColumnName="Email" />
                 <ScalarProperty Name="Phone_No" ColumnName="Phone_No" />
                 <ScalarProperty Name="Gender" ColumnName="Gender" />
-                <ScalarProperty Name="Suffix" ColumnName="Suffix" />
                 <ScalarProperty Name="Last_Name" ColumnName="Last_Name" />
                 <ScalarProperty Name="Middle_Name" ColumnName="Middle_Name" />
                 <ScalarProperty Name="First_Name" ColumnName="First_Name" />

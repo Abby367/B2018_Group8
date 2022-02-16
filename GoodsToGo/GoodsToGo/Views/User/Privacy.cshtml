@@ -1,0 +1,266 @@
+﻿
+@{
+    ViewBag.Title = "Privacy";
+    Layout = "~/Views/_LayoutPage3.cshtml";
+}
+
+<link href="~/assets/css/pace.min.css" rel="stylesheet" />
+<script src="~/assets/js/pace.min.js"></script>
+
+<!--plugins-->
+
+<link href="~/assets/plugins/input-tags/css/tagsinput.css" rel="stylesheet" />
+
+<!-- CSS Files -->
+<link href="~/assets/css/bootstrap.min.css" rel="stylesheet">
+<link href="~/assets/css/bootstrap-extended.css" rel="stylesheet">
+<link href="~/assets/css/style.css" rel="stylesheet">
+<link href="~/assets/css/icons.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+
+
+<link href="~/assets/plugins/simplebar/css/simplebar.css" rel="stylesheet" />
+<link href="~/assets/plugins/perfect-scrollbar/css/perfect-scrollbar.css" rel="stylesheet" />
+<link href="~/assets/plugins/metismenu/css/metisMenu.min.css" rel="stylesheet" />
+<link href="~/assets/plugins/datetimepicker/css/classic.css" rel="stylesheet" />
+<link href="~/assets/plugins/datetimepicker/css/classic.time.css" rel="stylesheet" />
+<link href="~/assets/plugins/datetimepicker/css/classic.date.css" rel="stylesheet" />
+<link rel="stylesheet" href="~/assets/plugins/bootstrap-material-datetimepicker/css/bootstrap-material-datetimepicker.min.css">
+
+<!-- CSS Files -->
+<script src="~/js/bootstrap.min.js"></script>
+<link href="~/assets/css/bootstrap.min.css" rel="stylesheet">
+<link href="~/assets/css/bootstrap-extended.css" rel="stylesheet">
+<link href="~/assets/css/style.css" rel="stylesheet">
+<link href="~/assets/css/icons.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+
+<!--Theme Styles-->
+<link href="~/assets/css/dark-theme.css" rel="stylesheet" />
+<link href="~/assets/css/semi-dark.css" rel="stylesheet" />
+<link href="~/assets/css/header-colors.css" rel="stylesheet" />
+
+
+
+
+
+
+<!--start wrapper-->
+<div class="wrapper">
+    <!--start wrapper-->
+    <div class="wrapper">
+
+        <!--start sidebar -->
+        <aside class="sidebar-wrapper" data-simplebar="true">
+            <div class="sidebar-header">
+                <div>
+
+                    <img src="~/assets/images/logo-icon-2.png" class="logo-icon" alt="logo icon" />
+                </div>
+                <div>
+
+                </div>
+                <div class="toggle-icon ms-auto">
+                    <ion-icon name="menu-sharp"></ion-icon>
+                </div>
+            </div>
+            <!--navigation-->
+            <ul class="metismenu" id="menu">
+                <li>
+                    <a href=@Url.Action("Inside", "User")>
+                        <div class="parent-icon">
+                            <ion-icon name="home-sharp"></ion-icon>
+                        </div>
+                        <div class="menu-title">Home</div>
+                    </a>
+                </li>
+                <li>
+                    <a href=@Url.Action("Details", "User", new { Id = ViewData["um"] })>
+                        <div class="parent-icon">
+                            <ion-icon name="person-circle-sharp"></ion-icon>
+                        </div>
+                        <div class="menu-title">User Profile</div>
+                    </a>
+                </li>
+                <li>
+
+                    <a href=@Url.Action("Edit", "User", new { Id = ViewData["um"] })>
+                        <div class="parent-icon">
+                            <ion-icon name="create-sharp"></ion-icon>
+                        </div>
+                        <div class="menu-title">Edit Profile</div>
+                    </a>
+                </li>
+
+
+                <li>
+                    <a href=@Url.Action("Privacy","User")>
+                        <div class="parent-icon">
+                            <ion-icon name="receipt-sharp"></ion-icon>
+                        </div>
+                        <div class="menu-title">Privacy And Policy</div>
+                    </a>
+                </li>
+                <li>
+                    <a href=@Url.Action("Term","User")>
+                        <div class="parent-icon">
+                            <ion-icon name="shield-checkmark-sharp"></ion-icon>
+                        </div>
+                        <div class="menu-title">Terms And Condition </div>
+                    </a>
+
+                </li>
+
+            </ul>
+            <!--end navigation-->
+        </aside>
+        <!--end sidebar -->
+        <!--start top header-->
+        <header class="top-header">
+            <nav class="navbar navbar-expand gap-3">
+                <div class="mobile-menu-button">
+                    <ion-icon name="menu-sharp"></ion-icon>
+                </div>
+
+                <div class="top-navbar-right ms-auto">
+                    <ul class="navbar-nav align-items-center">
+
+                        <li class="nav-item">
+                            <a class="nav-link dark-mode-icon" href="javascript:;">
+                                <div class="mode-icon">
+                                    <ion-icon name="moon-sharp"></ion-icon>
+                                </div>
+                            </a>
+
+                        </li>
+                    </ul>
+
+
+                </div>
+            </nav>
+        </header>
+        <!--end top header-->
+        <!-- start page content wrapper-->
+        <div class="page-content-wrapper">
+            <!-- start page content-->
+            <div class="page-content">
+
+                <!--start breadcrumb-->
+                <div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
+                    <div class="breadcrumb-title pe-3">Dashboard</div>
+                    <div class="ps-3">
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb mb-0 p-0 align-items-center">
+                                <li class="breadcrumb-item">
+                                    <a href="javascript:;"><ion-icon name="home-outline"></ion-icon></a>
+                                </li>
+                                <li class="breadcrumb-item active" aria-current="page">Privacy And Policy</li>
+                            </ol>
+                        </nav>
+                    </div>
+                    </div>
+                <!--end breadcrumb-->
+
+                <div class="card radius-10">
+                    <div class="row g-0">
+                       
+                       
+
+                            <img src="~/images/safety-2021-08-30-06-13-22-utc.jpg"class="img-fluid" alt="" /> 
+                       
+                    </div>
+                    <!--end row-->
+                </div>
+                <div class="card radius-10">
+                    <div class="card-body">
+                        <h4>POLICY ON CONSENSUAL DATA COLLECTION OF PERSONAL INFORMATION</h4>
+                        <p>Goods To Go (Taguig Public Distribution System) is the official digital platform of Taguig City whereby it is a mix of systems that have functions utilized for Socio-Economic Services, Business & Financial Transactions of the city. Goods To go Web app is being utilized to book their meal packs on the time that they schedule. To minimize propagation of infection and limit the danger of COVID-19</p>
+                        
+                       
+                        <p>The system, which is accessible through desktop and mobile devices, intends to make it simpler and more accurate for the city to gather, manage, analyze, and monitor individual's information. We secure the data's confidentiality and the user's security. Thus, we will demand just what is absolutely essential for the system to work properly. No information about our users will be gathered unless they agree to the terms and conditions as well as our privacy statement and provide their permission. This page is intended to educate readers about our policies regarding the collection, use, and disclosure of Personal Information when they use our Service.</p>
+                       <h4>WHAT INFORMATION ABOUT THE USER DO WE COLLECT?</h4>
+                        <p>Without your cooperation, we do not gather any personal information. Our system may be utilized without providing us with any personal information.</p>
+                        <p>The Goods To Go System will handle, retain, and safeguard your personal information in line with Republic Act 10173 or the Data Privacy Act of 2012.</p>
+                        <p>The Goods To Go System will collect, use, and disclose your personally identifiable information in compliance with this policy and the 2012 Data Privacy Act.</p>
+                        <p>We collect personal data only for specific and legitimate purposes that have been identified and declared prior to, or as soon as reasonably practical after, collection, and are then handled in a manner consistent with such stated, specified, and legitimate objectives.</p>
+                        <p>This occurs when the user contacts us by completing the portions of the registration form that need certain personal information.</p>
+                        <p>The following information is required upon registration, with the associated purpose:</p>
+                        <p>                            Barangay - so that authorities may appropriately classify the individual depending on their place of residence.
+
+
+                            Name – so that authorities may correctly identify the correct individual.
+
+
+                            Address – so that authorities may ascertain the precise location while conducting contact tracing and essential door-to-door actions.
+
+
+                            Email – so that the system may use an other method of identification in addition to the cellphone number.
+
+
+                            Gender – so that authorities may categorise individuals according to their sexual orientation
+
+
+                            Birthdate – used to ensure correct identification and in the event that many people have the same name.
+
+
+                            Mobile Number – utilized to uniquely identify the user in the system and to contact the person if contact tracing is required.
+
+
+                            Password – for account security purposes, however keep in mind that only the system can access this; even the developers cannot view your input.</p>
+                        <p>While the Goods To Go System does not compel individuals to provide more personal information when they register, they do have the option to update or complete their profile afterwards. When updating, some of the numerous fields are mostly utilized for other Taguig-based services.</p>
+                    <h4>Observational Data</h4>
+                        <p>We wish to notify you that whenever you use our Service, in the event of an app mistake, we gather data and information on your phone called Log Data (through third-party products). This Log Data may comprise your device's Internet Protocol ("IP") address, device name, operating system version, the app configuration used to access our Service, the time and date of your usage of the Service, and other data. The Log Data are statistical and technical data that does not include personal information and are just gathered to better the application’s functions.</p>
+                    <h4>Cookies</h4>
+                        <p>Cookies are little data files that are often utilized as anonymous unique identifiers. These are delivered to your browser by the websites you visit and are kept in the internal memory of your device.</p>
+                        <p>These "cookies" are not used expressly by this Service. However, the app may use code and libraries from third parties who utilize "cookies" to gather information and enhance their services. You may accept or decline these cookies and are notified when a cookie is delivered to your device. If you reject our cookies, you may be unable to utilize some features of our Service.</p>
+                        <h4>How We Use Personally Identifiable Information and Collected Data</h4>
+                   <p>Again, said data will be utilized only by the City Government of Taguig for the purpose of executing the "Public Goods Distribution System" (Goods To Go) with a distinct brand identification to differentiate the unique functions that we provided for Taguig City's special demands.</p>
+                        <h4>Retention of Individually Identifiable and Collected Data</h4>
+                        <p>We and/or our lawfully authorized third party will keep Personal Data and Gathered Data for a maximum of five (5) years from the day you give it to us or when it was collected, respectively. However, in the event of a lawyer-client relationship, we may retain Personal Data and Collected Data for a longer period of time.</p>
+                        <h4>Publication and Sharing of Personally Identifiable Information and Collected Data</h4>
+                        <p>We may freely publish aggregated information about our users and information that does not identify, or when coupled with additional information, does not identify, any person. We may disclose and exchange Personal Data and Collected Data in the following ways, pursuant to relevant laws and regulations, on a need-to-know basis, and in all circumstances, only for legitimate business purposes:</p>
+                        <p>To contractors, service providers, and other third parties that assist us in our business and who are contractually obligated to maintain the confidentiality of Customer Information and Collected Data and to use it only for the reasons for which we provide it to them;</p>
+                        <h4>To government, law enforcement, and regulatory authorities;</h4>
+                        <p>To adhere to court orders, government agencies, regulatory organizations, and stock exchange rules, as well as relevant laws and regulations;</p>
+                        <p>If we think disclosure is required or appropriate to protect our rights, property, or safety, as well as the rights, property, or safety of our employees or other third parties; and </p>
+                        <p>To undertake investigations into alleged violations of our internal rules, laws, and regulations, to impose appropriate consequences, and, if necessary, to pursue legal action.</p>
+                    <h4>Visitor to the website who is under the age of sixteen</h4>
+                        <p>Under no circumstances may anyone under the age of sixteen (16) ("Minors") submit any Personal Data on the Website. Minors' personal data may be acquired in certain situations. If this occurs, authorization from the Minors' parents or legal guardian is necessary prior to collecting. We do not collect Personal Data from Minors without their parents' or legal guardian's approval. If you are a Minor, you must not use or disclose any information about yourself on this Website without your parents or legal guardian's agreement.</p>
+                        <h4>Access to and Correction of Your Personally Identifiable Information</h4>
+                        <p>You have certain rights in relation to the Personal Data collected about you, including the right to access and correct your Personal Data that is being processed, to object to processing, and to lodge a complaint with the National Privacy Commission in the event of a violation of your data subject rights. You may contact us through email at privacytrace@taguig.gov.ph to seek access to, correction of, or deletion of any Personal Data you have supplied to us. Please be aware, however, that we cannot remove your Personal Data without impairing or eliminating our capacity to respond effectively to your Concerns or process submitted resumes for hiring reasons. We may deny a request to amend and/or delete Personal Data if we think that doing so would violate any law or legal requirement or would result in the Personal Data being erroneous.</p>
+                        <h4>Security of Your Personally Identifiable Information and Collected Data</h4>
+                        <p>We have implemented technical, organizational, and physical safeguards to safeguard the confidentiality, integrity, and availability of your Personal Data and Collected Data, as well as to protect them from destruction, unauthorized access, alteration, disclosure, fraudulent misuse, and/or any other unlawful processing.</p>
+                     </div>
+                </div>
+                <div class="mt-5">
+                    <a href=@Url.Action("Inside","User")class="btn btn-primary btn-lg px-md-5 radius-30">Go Home</a>
+                    <a href=@Url.Action("Inside","User") class="btn btn-outline-dark btn-lg ms-3 px-md-5 radius-30">Back</a>
+                </div>
+
+
+
+            </div>
+        </div>
+    </div>
+    </div>
+    <!-- JS Files-->
+    <script src="~/assets/js/jquery.min.js"></script>
+    <script src="~/assets/plugins/simplebar/js/simplebar.min.js"></script>
+    <script src="~/assets/plugins/metismenu/js/metisMenu.min.js"></script>
+    <script src="~/assets/js/bootstrap.bundle.min.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js">
+    </script>
+    <!--plugins-->
+    <script src="~/assets/plugins/perfect-scrollbar/js/perfect-scrollbar.js"></script>
+    <script src="~/assets/plugins/datetimepicker/js/legacy.js"></script>
+    <script src="~/assets/plugins/datetimepicker/js/picker.js"></script>
+    <script src="~/assets/plugins/datetimepicker/js/picker.time.js"></script>
+    <script src="~/assets/plugins/datetimepicker/js/picker.date.js"></script>
+    <script src="~/assets/plugins/bootstrap-material-datetimepicker/js/moment.min.js"></script>
+    <script src="~/assets/plugins/bootstrap-material-datetimepicker/js/bootstrap-material-datetimepicker.min.js"></script>
+    <script src="~/assets/js/form-date-time-pickes.js"></script>
+
+    <!-- Main JS-->
+    <script src="~/assets/js/main.js"></script>
+
+

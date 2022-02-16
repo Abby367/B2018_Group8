@@ -5,6 +5,7 @@
     <EntitySet Name="Genders" EntityType="Database.Gender" />
     <EntitySet Name="ResetPasswords" EntityType="Database.ResetPassword" />
     <EntitySet Name="Books" EntityType="Database.Book" />
+    <EntitySet Name="Tables" EntityType="Database.Table" />
     <EntitySet Name="Users" EntityType="Database.User" />
   </EntityContainer>
   <EntityType Name="Barangay">
@@ -40,6 +41,16 @@
     <Property Name="Date" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="Time" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
   </EntityType>
+  <EntityType Name="Table">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Date" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Time" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
   <EntityType Name="User">
     <Key>
       <PropertyRef Name="Id" />
@@ -54,7 +65,6 @@
     <Property Name="First_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="Middle_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="Last_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="Suffix" Type="Int32" />
     <Property Name="Gender" Type="Int32" />
     <Property Name="Phone_No" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
