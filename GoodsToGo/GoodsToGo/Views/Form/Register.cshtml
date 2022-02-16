@@ -3,11 +3,6 @@
     ViewBag.Title = "Register";
     Layout = "~/Views/_LayoutPage2.cshtml";
 }
-@using (Html.BeginForm("Register", "Form", new { Id = UrlParameter.Optional }, FormMethod.Post))
-{
-    @Html.AntiForgeryToken()
-    @Html.ValidationSummary(true)
-
 
 <!-- Required meta tags -->
 <meta charset="utf-8">
@@ -67,7 +62,7 @@
                                 </div>
 
 
-                                <form class="form-body row g-3">
+                                <form action="#" method="post" class="form-body row g-3">
                                     @Html.HiddenFor(model => model.Id)
                                     <h6 class="mb-0 text-uppercase">Location</h6>
                                     <hr>
@@ -145,8 +140,9 @@
                                         <div class="input-group mb-3">
                                             <span class="input-group-text" id="basic-addon">+63</span>
                                             @Html.EditorFor(model => model.Phone_No, new { htmlAttributes = new { @class = "form-control", @placeholder = "Phone Number" } })
-                                            @Html.ValidationMessageFor(model => model.Phone_No, "", new { @class = "text-danger" })
                                         </div>
+                                            @Html.ValidationMessageFor(model => model.Phone_No, "", new { @class = "text-danger" })
+                                       
                                     </div>
                                     <div class="col-12">
                                        

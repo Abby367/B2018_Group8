@@ -33,16 +33,6 @@
     <Property Name="ConfirmPassword" Type="varchar" MaxLength="50" />
     <Property Name="ResetCode" Type="varchar" MaxLength="50" />
   </EntityType>
-  <EntityType Name="Table">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Email" Type="varchar" MaxLength="50" />
-    <Property Name="Name" Type="varchar" MaxLength="50" />
-    <Property Name="Date" Type="varchar" MaxLength="50" />
-    <Property Name="Time" Type="varchar" MaxLength="50" />
-  </EntityType>
   <EntityType Name="User">
     <Key>
       <PropertyRef Name="Id" />
@@ -68,7 +58,6 @@
     <EntitySet Name="Book" EntityType="Self.Book" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Gender" EntityType="Self.Gender" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ResetPassword" EntityType="Self.ResetPassword" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="Table" EntityType="Self.Table" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
   </EntityContainer>
 </Schema>

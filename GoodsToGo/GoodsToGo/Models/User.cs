@@ -37,6 +37,7 @@ namespace GoodsToGo.Models
         [Required(ErrorMessage = "This field is required")]
         public string Phone_No { get; set; }
         [Required(ErrorMessage = "This field is required")]
+        [DataType(DataType.EmailAddress)]
         public string Email { get; set; }
         [Required(ErrorMessage = "This field is required")]
         public string Birthdate { get; set; }

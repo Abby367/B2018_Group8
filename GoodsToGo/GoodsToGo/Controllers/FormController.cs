@@ -25,15 +25,23 @@ namespace GoodsToGo.Views
             return View();
         }
         [HttpPost]
+       
         public ActionResult Register(User us)
         {
-
-
-
-            db.Users.Add(us);
-            db.SaveChanges();
-            return RedirectToAction("Login");
+            ViewBag.BrgyList = new SelectList(GetBarangayList(), "BarangayID", "Barangay_Name");
+            ViewBag.GenderList = new SelectList(GetGenderList(), "GenderID", "GenderName");
+            if (ModelState.IsValid)
+            {
+                db.Users.Add(us);
+                db.SaveChanges();
+                return RedirectToAction("Login");
+            }
+            else
+            {
+                return View();
+            }
         }
+
         [NonAction]
 public void SendVerificationLinkEmail(string emailID, string activationCode, string emailFor = "VerifyAccount")
         {
@@ -162,14 +170,15 @@ public void SendVerificationLinkEmail(string emailID, string activationCode, str
         [HttpGet]
         public ActionResult Login()
         {
-
+            ViewBag.BrgyList = new SelectList(GetBarangayList(), "BarangayID", "Barangay_Name");
+            ViewBag.GenderList = new SelectList(GetGenderList(), "GenderID", "GenderName");
             return View();
         }
         [HttpPost]
+        
         public ActionResult Login(User us)
         {
             ViewBag.BrgyList = new SelectList(GetBarangayList(), "BarangayID", "Barangay_Name");
-
             ViewBag.GenderList = new SelectList(GetGenderList(), "GenderID", "GenderName");
             var obj = db.Users.Where(x => x.Email.Equals(us.Email) && x.Password.Equals(us.Password)).FirstOrDefault();
             if (obj != null)
@@ -185,7 +194,7 @@ public void SendVerificationLinkEmail(string emailID, string activationCode, str
             else
             {
 
-                ModelState.AddModelError("", "Invalid User Email or Password");
+              ModelState.AddModelError("Error","Invalid User Email or Password");
                 return View();
             
                 

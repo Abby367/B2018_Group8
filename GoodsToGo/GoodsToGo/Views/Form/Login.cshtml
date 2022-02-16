@@ -4,6 +4,8 @@
     ViewBag.Title = "Login";
     Layout = "~/Views/_LayoutPage2.cshtml";
 }
+
+
 <!-- Required meta tags -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -33,16 +35,19 @@
                         <div class="card shadow-none">
                             <div class="card-body">
 
-                                <form action="#" method="post" class="form-body row g-3">
+                                <form  action="#" method="post" class="form-body row g-3">
                                     <div class="text-center">
                                         <h4>Sign In</h4>
                                         <p>Sign In to your account</p>
                                     </div>
+                                    <div class ="text-danger">
+                                    @Html.ValidationMessage("Error")
+                                        </div>
                                     <div class="col-12">
                                         <label for="inputEmail" class="form-label">Email</label>
                                    
                                     @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control", placeholder = "Email Address" } })
-                                        @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                                     @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
                                     </div>
                                     <div class="col-12">
                                         <label for="inputPassword" class="form-label">Password</label>
@@ -58,7 +63,7 @@
                                         </div>
                                     </div>
                                     <div class="col-12 col-lg-6 text-end">
-                                        <a href=@Url.Action("Forgot","Form")>Forgot Password?</a>
+                                        <a href=@Url.Action("Forgot", "Form")>Forgot Password?</a>
                                     </div>
                                     <div class="col-12 col-lg-12">
                                         <div class="d-grid">
@@ -68,7 +73,7 @@
                                     </div>
                                     
                                     <div class="col-12 col-lg-12 text-center">
-                                        <p class="mb-0">Don't have an account? <a href=@Url.Action("Register","Form")>Sign up</a></p>
+                                        <p class="mb-0">Don't have an account? <a href=@Url.Action("Register", "Form")>Sign up</a></p>
                                     </div>
                                 </form>
                             </div>
@@ -83,4 +88,5 @@
             <!--end row-->
         </div>
     </div>
+}
     <!--end wrapper-->

@@ -11,11 +11,17 @@ namespace GoodsToGo.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class ResetPassword
     {
         public int Id { get; set; }
+        [Required(ErrorMessage = "This field is required")]
+        [DataType(DataType.Password)]
         public string NewPassword { get; set; }
+        [Required(ErrorMessage = "This field is required")]
+        [DataType(DataType.Password)]
+        [Compare("Password", ErrorMessage = "Password didn't match")]
         public string ConfirmPassword { get; set; }
         public string ResetCode { get; set; }
     }

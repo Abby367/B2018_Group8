@@ -11,13 +11,19 @@ namespace GoodsToGo.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class Book
     {
         public int Id { get; set; }
+        [Required(ErrorMessage = "This field is required")]
+        [DataType(DataType.EmailAddress)]
         public string Email { get; set; }
+        [Required(ErrorMessage = "This field is required")]
         public string Name { get; set; }
+        [Required(ErrorMessage = "This field is required")]
         public string Date { get; set; }
+        [Required(ErrorMessage = "This field is required")]
         public string Time { get; set; }
     }
 }
