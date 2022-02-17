@@ -21,7 +21,7 @@ namespace GoodsToGo.Models
         public string Password { get; set; }
         [Required(ErrorMessage = "This field is required")]
         [DataType(DataType.Password)]
-        [Compare("Password",ErrorMessage ="Password didn't match")]
+        [Compare("Password", ErrorMessage = "Password didn't match")]
         public string Re_Password { get; set; }
         public Nullable<int> BarangayID { get; set; }
         public string House_No { get; set; }

@@ -27,8 +27,12 @@ namespace GoodsToGo.Controllers
         [HttpPost]
         public ActionResult Userxd(User um)
         {
+
+            ViewBag.BrgyList = new SelectList(GetBarangayList(), "BarangayID", "Barangay_Name");
+            ViewBag.GenderList = new SelectList(GetGenderList(), "GenderID", "GenderName");
             if (ModelState.IsValid)
             {
+                
                 var data = db.Users.ToList();
 
 
@@ -74,6 +78,20 @@ namespace GoodsToGo.Controllers
             Response.Cache.SetNoStore();
             return RedirectToAction("Index", "Home");
         }
+        public List<Barangay> GetBarangayList()
+        {
+
+            List<Barangay> brgy = db.Barangays.ToList();
+            return brgy;
+        }
+
+        public List<Gender> GetGenderList()
+        {
+            List<Gender> Gen = db.Genders.ToList();
+            return Gen;
+
+        }
+
 
     }
 }

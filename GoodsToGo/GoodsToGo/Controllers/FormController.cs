@@ -30,16 +30,11 @@ namespace GoodsToGo.Views
         {
             ViewBag.BrgyList = new SelectList(GetBarangayList(), "BarangayID", "Barangay_Name");
             ViewBag.GenderList = new SelectList(GetGenderList(), "GenderID", "GenderName");
-            if (ModelState.IsValid)
-            {
+            
                 db.Users.Add(us);
                 db.SaveChanges();
                 return RedirectToAction("Login");
-            }
-            else
-            {
-                return View();
-            }
+           
         }
 
         [NonAction]
@@ -48,7 +43,7 @@ public void SendVerificationLinkEmail(string emailID, string activationCode, str
             var verifyUrl = "/Form/" + emailFor + "/" + activationCode;
             var link = Request.Url.AbsoluteUri.Replace(Request.Url.PathAndQuery, verifyUrl);
 
-            var fromEmail = new MailAddress("taguigpublicgoodsdistribution@gmail.com", "Unikon34");
+            var fromEmail = new MailAddress("taguigpublicgoodsdistribution@gmail.com", "Goods To Go");
             var toEmail = new MailAddress(emailID);
             var fromEmailPassword = "Unikon34"; // Replace with actual password
 
@@ -58,8 +53,9 @@ public void SendVerificationLinkEmail(string emailID, string activationCode, str
            if (emailFor == "ResetPassword")
             {
                 subject = "Reset Password";
-                body = "Hi,<br/>br/>We got request for reset your account password. Please click on the below link to reset your password" +
-                    "<br/><br/><a href=" + link + ">Reset Password link</a>";
+                body = "Hi,<br/><br/>You Recently requested to reset your password for your account. Click the link below" +
+                    "<br/><br/><a href=" + link + ">Reset Password link</a> <br/><br/>" +
+                    "<br/><br/>If you did not request password reset please ignore this email or reply to let us know ";
             }
 
 

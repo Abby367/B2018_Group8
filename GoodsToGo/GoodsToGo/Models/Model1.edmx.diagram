@@ -8,7 +8,7 @@
         <EntityTypeShape EntityType="Database.Barangay" Width="1.5" PointX="8.625" PointY="2" />
         <EntityTypeShape EntityType="Database.Gender" Width="1.5" PointX="6.125" PointY="6.125" />
         <EntityTypeShape EntityType="Database.ResetPassword" Width="1.5" PointX="0.75" PointY="5.75" />
-        <EntityTypeShape EntityType="Database.Book" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="Database.Book" Width="1.5" PointX="4.5" PointY="1.625" />
         <EntityTypeShape EntityType="Database.User" Width="1.5" PointX="3.375" PointY="3.75" />
       </Diagram>
     </edmx:Diagrams>
