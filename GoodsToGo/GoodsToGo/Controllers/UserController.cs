@@ -44,11 +44,8 @@ namespace GoodsToGo.Views
         [HttpPost]
         public ActionResult Edit(User user)
         {
-            var obj = db.Users.FirstOrDefault(x => x.Email == System.Web.HttpContext.Current.User.Identity.Name).Id;
-            ViewData["um"] = obj;
-          
-          
-
+            
+           
             ViewBag.BrgyList = new SelectList(GetBarangayList(), "BarangayID", "Barangay_Name");
             ViewBag.GenderList = new SelectList(GetGenderList(), "GenderID", "GenderName");
             

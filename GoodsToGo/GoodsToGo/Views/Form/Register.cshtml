@@ -72,7 +72,7 @@
                                         <div class="col-12">
 
                                           
-                                            @Html.DropDownListFor(model => model.BarangayID, ViewBag.BrgyList as SelectList, new { @class = "form-control" })
+                                            @Html.DropDownListFor(model => model.BarangayID, (SelectList) ViewBag.BrgyList,"--- Select Barangay ---",  new { @class = "form-select" })
                                             @Html.ValidationMessageFor(model => model.BarangayID, "", new { @class = "text-danger" })
 
 
@@ -122,7 +122,7 @@
                                     <div class="col-12">
                                        
                                         <label class="form-label">Gender <span class="text-danger">*</span></label>
-                                        @Html.DropDownListFor(model => model.Gender, ViewBag.GenderList as SelectList, new { @class = "form-select" })
+                                        @Html.DropDownListFor(model => model.Gender, (SelectList)ViewBag.GenderList, "--- Select Gender ---", new { @class = "form-select" })
                                         @Html.ValidationMessageFor(model => model.Gender, "", new { @class = "text-danger" })
 
 

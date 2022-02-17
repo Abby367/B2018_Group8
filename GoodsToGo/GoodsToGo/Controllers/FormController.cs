@@ -186,7 +186,7 @@ public void SendVerificationLinkEmail(string emailID, string activationCode, str
                 FormsAuthentication.SetAuthCookie(us.Email, false);
                 return RedirectToAction("Inside", "User");
             }
-            else if (us.Email == "admin" && us.Password == "admin")
+            else if (us.Email == "admin@gmail.com" && us.Password == "admin")
             {
                 FormsAuthentication.SetAuthCookie(us.Email, false);
                 return RedirectToAction("Admin", "Admin");

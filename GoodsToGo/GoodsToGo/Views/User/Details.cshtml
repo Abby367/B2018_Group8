@@ -181,7 +181,7 @@
                                         <div class="col-12">
 
 
-                                            @Html.DropDownListFor(model => model.BarangayID, ViewBag.BrgyList as SelectList, new { @class = "form-control" })
+                                            @Html.DropDownListFor(model => model.BarangayID, (SelectList)ViewBag.BrgyList, "--- Select Barangay ---", new { @class = "form-control", @disabled = true })
 
 
 
@@ -190,15 +190,15 @@
                                     </div>
                                     <div class="col-12">
                                         <label class="form-label">House/Lot & Block No. (Optional) </label>
-                                        @Html.EditorFor(model => model.House_No, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.EditorFor(model => model.House_No, new { htmlAttributes = new { @class = "form-control",  @disabled = true } })
                                     </div>
                                     <div class="col-12">
                                         <label class="form-label">Street <span class="text-danger">*</span></label>
-                                        @Html.EditorFor(model => model.Street, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.EditorFor(model => model.Street, new { htmlAttributes = new { @class = "form-control",  @disabled = true } })
                                     </div>
                                     <div class="col-12">
                                         <label class="form-label">Subd./Phase/Purok </label>
-                                        @Html.EditorFor(model => model.Purok_No, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.EditorFor(model => model.Purok_No, new { htmlAttributes = new { @class = "form-control",  @disabled = true } })
                                     </div>
 
 
@@ -210,50 +210,42 @@
 
                                                 <div class="col-12">
                                                     <label class="form-label">First Name <span class="text-danger">*</span></label>
-                                                    @Html.EditorFor(model => model.First_Name, new { htmlAttributes = new { @class = "form-control" } })
+                                                    @Html.EditorFor(model => model.First_Name, new { htmlAttributes = new { @class = "form-control", @disabled = true } })
                                                 </div>
                                                 <div class="col-12">
                                                     <label class="form-label">Middle Name </label>
-                                                    @Html.EditorFor(model => model.Middle_Name, new { htmlAttributes = new { @class = "form-control" } })
+                                                    @Html.EditorFor(model => model.Middle_Name, new { htmlAttributes = new { @class = "form-control", @disabled = true } })
                                                 </div>
                                                 <div class="col-12">
                                                     <label class="form-label">Last Name <span class="text-danger">*</span></label>
-                                                    @Html.EditorFor(model => model.Last_Name, new { htmlAttributes = new { @class = "form-control" } })
+                                                    @Html.EditorFor(model => model.Last_Name, new { htmlAttributes = new { @class = "form-control", @disabled = true } })
 
                                                     <div class="col-12">
                                                         <label class="form-label">Gender <span class="text-danger">*</span></label>
-                                                        @Html.DropDownListFor(model => model.Gender, ViewBag.GenderList as SelectList, new { @class = "form-select" })
+                                                        @Html.DropDownListFor(model => model.Gender, ViewBag.GenderList as SelectList, new { @class = "form-control", @disabled = true })
 
 
                                                     </div>
                                                     <div class="col-12">
 
                                                         <label class="form-label">Birthdate <span class="text-danger">*</span></label>
-                                                        @Html.EditorFor(model => model.Birthdate, new { htmlAttributes = new { @class = "form-control", @type = "date" } })
+                                                        @Html.EditorFor(model => model.Birthdate, new { htmlAttributes = new { @class = "form-control", @type = "date", @disabled = true } })
                                                     </div>
 
                                                     <div class="col-12">
                                                         <label class="form-label">Phone Number<span class="text-danger">*</span></label>
                                                         <div class="input-group mb-3">
                                                             <span class="input-group-text" id="basic-addon">+63</span>
-                                                            @Html.EditorFor(model => model.Phone_No, new { htmlAttributes = new { @class = "form-control", @placeholder = "Phone Number" } })
+                                                            @Html.EditorFor(model => model.Phone_No, new { htmlAttributes = new { @class = "form-control", @placeholder = "Phone Number", @disabled = true } })
                                                         </div>
                                                     </div>
                                                     <div class="col-12">
                                                         <label class="form-label">Email<span class="text-danger">*</span></label>
-                                                        @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
+                                                        @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control", @disabled = true } })
                                                     </div>
-                                                    <div class="col-12">
-                                                        <label class="form-label">Password<span class="text-danger">*</span></label>
-                                                        @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control" } })
-                                                    </div>
-                                                </div>
-                                                <div class="col-12">
-                                                    <label class="form-label">Confirm Password<span class="text-danger">*</span></label>
-                                                    @Html.EditorFor(model => model.Re_Password, new { htmlAttributes = new { @class = "form-control" } })
+                                                 
                                                 </div>
                                             </div>
-
                                             <div class="col-12">
                                                 <div class="d-grid">
                                                     <button type="submit" value="Submit" class="btn btn-primary">Close</button>
